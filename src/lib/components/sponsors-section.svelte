@@ -51,7 +51,7 @@
 		</div>
 		<button
 			class="rounded-full bg-black px-6 py-3 font-medium text-white transition-colors hover:bg-gray-800"
-			on:click={onCtaClick}
+			onclick={onCtaClick}
 		>
 			{ctaText}
 		</button>

@@ -5,11 +5,7 @@
 		description?: string;
 		speaker?: string;
 		track?: string;
-		borderColor: string;
-		bgColor: string;
-		textColor: string;
-		badgeText?: string;
-		badgeColor?: string;
+		type: 'session' | 'break' | 'keynote' | 'workshop';
 	}
 
 	interface AgendaProps {
@@ -29,18 +25,14 @@
 			{
 				time: '8:30 AM',
 				title: 'Registration & Breakfast',
-				description: 'Check-in, networking, and morning refreshments',
-				borderColor: 'border-blue-500',
-				bgColor: 'bg-blue-50',
-				textColor: 'text-blue-900'
+				description: 'Check-in and morning refreshments',
+				type: 'break'
 			},
 			{
 				time: '9:30 AM',
 				title: 'Opening Keynote',
 				description: 'Welcome to DevFest Chennai 2025',
-				borderColor: 'border-purple-500',
-				bgColor: 'bg-purple-50',
-				textColor: 'text-purple-900'
+				type: 'keynote'
 			},
 			{
 				time: '10:15 AM',
@@ -48,18 +40,12 @@
 				description: 'Latest developments in machine learning and AI applications',
 				speaker: 'Sanju Sivalingam',
 				track: 'AI Track',
-				borderColor: 'border-green-500',
-				bgColor: 'bg-green-50',
-				textColor: 'text-green-900',
-				badgeText: 'AI Track • Sanju Sivalingam',
-				badgeColor: 'bg-green-100 text-green-700'
+				type: 'session'
 			},
 			{
 				time: '11:00 AM',
 				title: 'Coffee Break',
-				borderColor: 'border-yellow-500',
-				bgColor: 'bg-yellow-50',
-				textColor: 'text-yellow-900'
+				type: 'break'
 			},
 			{
 				time: '11:30 AM',
@@ -67,11 +53,7 @@
 				description: 'Progressive Web Apps and modern frameworks',
 				speaker: 'Somasundaram M',
 				track: 'Web Track',
-				borderColor: 'border-orange-500',
-				bgColor: 'bg-orange-50',
-				textColor: 'text-orange-900',
-				badgeText: 'Web Track • Somasundaram M',
-				badgeColor: 'bg-orange-100 text-orange-700'
+				type: 'session'
 			},
 			{
 				time: '12:15 PM',
@@ -79,38 +61,62 @@
 				description: 'Build your first Kotlin app with Jetpack Compose',
 				speaker: 'Varun M',
 				track: 'Android Track',
-				borderColor: 'border-red-500',
-				bgColor: 'bg-red-50',
-				textColor: 'text-red-900',
-				badgeText: 'Android Track • Varun M',
-				badgeColor: 'bg-red-100 text-red-700'
+				type: 'workshop'
 			},
 			{
 				time: '1:00 PM',
 				title: 'Lunch & Networking',
-				description: 'Food, conversations, and community building',
-				borderColor: 'border-gray-500',
-				bgColor: 'bg-gray-50',
-				textColor: 'text-gray-900'
+				description: 'Food and community building',
+				type: 'break'
 			},
 			{
 				time: '2:00 PM',
 				title: 'Career Panel Discussion',
-				description: 'Industry experts share career insights and hiring tips',
-				borderColor: 'border-indigo-500',
-				bgColor: 'bg-indigo-50',
-				textColor: 'text-indigo-900'
+				description: 'Industry experts share career insights',
+				type: 'session'
 			},
 			{
 				time: '3:00 PM',
 				title: 'Closing & Prize Distribution',
-				description: 'Thank you, prizes, and see you next year!',
-				borderColor: 'border-purple-500',
-				bgColor: 'bg-purple-50',
-				textColor: 'text-purple-900'
+				description: 'Thank you and see you next year!',
+				type: 'keynote'
 			}
 		]
 	}: AgendaProps = $props();
+
+	function getTypeStyles(type: string) {
+		switch (type) {
+			case 'keynote':
+				return {
+					borderColor: 'border-purple-200',
+					bgColor: 'bg-purple-25',
+					textColor: 'text-purple-800',
+					badgeColor: 'bg-purple-100 text-purple-700'
+				};
+			case 'session':
+				return {
+					borderColor: 'border-blue-200',
+					bgColor: 'bg-blue-25',
+					textColor: 'text-blue-800',
+					badgeColor: 'bg-blue-100 text-blue-700'
+				};
+			case 'workshop':
+				return {
+					borderColor: 'border-orange-200',
+					bgColor: 'bg-orange-25',
+					textColor: 'text-orange-800',
+					badgeColor: 'bg-orange-100 text-orange-700'
+				};
+			case 'break':
+			default:
+				return {
+					borderColor: 'border-gray-200',
+					bgColor: 'bg-gray-25',
+					textColor: 'text-gray-700',
+					badgeColor: 'bg-gray-100 text-gray-600'
+				};
+		}
+	}
 </script>
 
 <div class="rounded-3xl bg-white p-10 lg:col-span-2">
@@ -120,33 +126,47 @@
 		<p class="text-gray-600">{date} • {location}</p>
 	</div>
 
-	<!-- Calendar-style schedule -->
-	<div class="space-y-2">
+	<!-- Timeline schedule -->
+	<div class="space-y-3">
 		{#each items as item (item.time)}
+			{@const styles = getTypeStyles(item.type)}
 			<div class="flex items-start gap-4">
-				<div class="w-16 flex-shrink-0 pt-2 text-right">
-					<div class="text-xs font-medium text-gray-900">{item.time}</div>
+				<div class="w-20 flex-shrink-0 pt-2 text-right">
+					<div class="text-sm font-medium text-gray-900">{item.time}</div>
 				</div>
 				<div class="flex-1">
-					<div class="rounded-lg border-l-4 {item.borderColor} {item.bgColor} p-3">
-						<h5 class="mb-1 font-medium {item.textColor}">{item.title}</h5>
-						{#if item.badgeText}
-							<div class="mb-1">
-								<span
-									class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium {item.badgeColor}"
-								>
-									{item.badgeText}
-								</span>
+					<div class="rounded-lg border-l-3 {styles.borderColor} {styles.bgColor} p-4">
+						<div class="flex items-start justify-between">
+							<div class="flex-1">
+								<h5 class="mb-1 font-medium {styles.textColor}">{item.title}</h5>
+								{#if item.description}
+									<p class="text-sm text-gray-600">{item.description}</p>
+								{/if}
 							</div>
-						{/if}
-						{#if item.description}
-							<p class="text-xs {item.textColor.replace('900', '700')}">
-								{item.description}
-							</p>
-						{/if}
+							{#if item.speaker || item.track}
+								<span class="ml-3 rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor}">
+									{item.track ? item.track : item.speaker}
+								</span>
+							{/if}
+						</div>
 					</div>
 				</div>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	.bg-purple-25 {
+		background-color: #faf5ff;
+	}
+	.bg-blue-25 {
+		background-color: #eff6ff;
+	}
+	.bg-orange-25 {
+		background-color: #fff7ed;
+	}
+	.bg-gray-25 {
+		background-color: #f9fafb;
+	}
+</style>
