@@ -153,7 +153,7 @@
 
 	<!-- Gradient overlays for fade effect -->
 	<div
-		class="pointer-events-none absolute top-32 right-0 left-0 z-10 h-20 bg-gradient-to-b from-white via-white to-transparent"
+		class="pointer-events-none absolute top-24 right-0 left-0 z-10 h-20 bg-gradient-to-b from-white via-white to-transparent"
 	></div>
 
 	<div

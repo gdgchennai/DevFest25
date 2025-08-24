@@ -130,8 +130,8 @@
 	<div class="space-y-3">
 		{#each items as item (item.time)}
 			{@const styles = getTypeStyles(item.type)}
-			<div class="flex items-start gap-4">
-				<div class="w-20 flex-shrink-0 pt-2 text-right">
+			<div class="flex items-start gap-2 sm:gap-4">
+				<div class="w-16 flex-shrink-0 pt-2 text-right sm:w-20">
 					<div class="text-sm font-medium text-gray-900">{item.time}</div>
 				</div>
 				<div class="flex-1">

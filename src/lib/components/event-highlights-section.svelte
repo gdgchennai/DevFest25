@@ -94,8 +94,8 @@
 						class="text-white transition-transform duration-300 group-hover:scale-110"
 					/>
 				</div>
-				<div class="transition-all duration-300 group-hover:translate-x-1">
-					<h5 class="mb-2 font-medium transition-all duration-300 group-hover:text-gray-800">
+				<div class="flex flex-col gap-1 transition-all duration-300 group-hover:translate-x-1">
+					<h5 class="font-medium transition-all duration-300 group-hover:text-gray-800">
 						{highlight.title}
 					</h5>
 					<p class="text-gray-600 transition-all duration-300 group-hover:text-gray-700">
