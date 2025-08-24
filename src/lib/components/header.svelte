@@ -7,7 +7,7 @@
 	}
 
 	let {
-		title = 'DevFest Chennai/25',
+		title = 'DevFest Chennai',
 		subtitle = '25',
 		ctaText = 'Register now',
 		onCtaClick = () => {}

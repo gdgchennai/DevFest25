@@ -30,6 +30,14 @@
 			{
 				name: 'Varun M',
 				title: 'Co–founder & CTO @ Skcript'
+			},
+			{
+				name: 'Ramachandran S',
+				title: 'AI Engineer @ Bitwarden'
+			},
+			{
+				name: 'Srinivasan S',
+				title: 'Q&A Moderator'
 			}
 		]
 	}: SpeakersProps = $props();
@@ -45,15 +53,15 @@
 		</div>
 		<button
 			class="rounded-full bg-gray-200 px-6 py-3 text-gray-700 transition-colors hover:bg-gray-300"
-			on:click={onCtaClick}
+			onclick={onCtaClick}
 		>
 			{ctaText}
 		</button>
 	</div>
-	<div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+	<div class="flex flex-row gap-12 overflow-x-auto scrollbar-hidden">
 		{#each speakers as speaker (speaker.name)}
-			<div class="text-center">
-				<div class="mb-6 h-60 rounded-lg bg-gray-200 shadow-lg"></div>
+			<div class="text-center flex flex-col items-center">
+				<div class="mb-6 size-72 bg-gray-200 shadow-lg border-4 border-white"></div>
 				<h5 class="mb-2 text-2xl font-bold" style="font-family: 'Caveat', sans-serif;">
 					{speaker.name}
 				</h5>
@@ -61,4 +69,16 @@
 			</div>
 		{/each}
 	</div>
+
+
 </div>
+
+	<style>
+		.scrollbar-hidden {
+			overflow: -moz-scrollbars-none; /* Firefox */
+			-ms-overflow-style: none; /* Internet Explorer and Edge */
+		}
+		.scrollbar-hidden::-webkit-scrollbar {
+			display: none; /* Safari and Chrome */
+		}
+	</style>

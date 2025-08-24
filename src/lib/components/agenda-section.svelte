@@ -19,8 +19,8 @@
 	let {
 		title = 'Agenda',
 		subtitle = 'One crisp day',
-		date = 'December 15, 2024',
-		location = 'Chennai',
+		date = 'October 23, 2025',
+		location = 'Chennai, India',
 		items = [
 			{
 				time: '8:30 AM',

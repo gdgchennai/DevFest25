@@ -25,6 +25,14 @@
 			{
 				question: 'Who can attend?',
 				answer: 'Developers, students, and tech enthusiasts are welcome.'
+			},
+			{
+				question: 'Can I access the content after the event?',
+				answer: 'YES! Get recordings, slides, and resources to continue learning.'
+			},
+			{
+				question: 'Can I get help with travel and accommodation?',
+				answer: 'YES! We provide information and support for travel arrangements.'
 			}
 		]
 	}: FAQProps = $props();
