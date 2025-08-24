@@ -1,11 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib';
-	import { 
-		Mic, 
-		Wrench, 
-		Users, 
-		Gift 
-	} from '@lucide/svelte';
+	import { Mic, Wrench, Users, Gift } from '@lucide/svelte';
+	import type { ComponentType } from 'svelte';
 
 	interface HighlightItem {
 		icon: any;
@@ -32,7 +28,7 @@
 			'bg-gradient-to-b from-teal-300 to-teal-500',
 			'bg-gradient-to-b from-red-300 to-red-500'
 		];
-		
+
 		return gradients[index % gradients.length];
 	}
 
@@ -68,30 +64,62 @@
 	}: EventHighlightsProps = $props();
 </script>
 
-<div class="rounded-3xl bg-white p-10 lg:col-span-2 flex flex-col gap-2 items-start justify-between">
-<div class="flex flex-col gap-2">
-		<h3 class="text-xl font-bold" style="font-family: 'Caveat', sans-serif;">
-		{title}
-	</h3>
-	<h4 class="text-2xl font-medium tracking-tight">{subtitle}</h4>
-</div>
+<div
+	class="flex flex-col items-start justify-between gap-2 rounded-3xl bg-white p-10 lg:col-span-2"
+>
+	<div class="flex flex-col gap-2">
+		<h3
+			class="text-xl font-bold transition-all duration-300 hover:scale-105"
+			style="font-family: 'Caveat', sans-serif;"
+		>
+			{title}
+		</h3>
+		<h4 class="text-2xl font-medium tracking-tight transition-all duration-300 hover:text-gray-700">
+			{subtitle}
+		</h4>
+	</div>
 
-	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+	<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
 		{#each highlights as highlight, index (highlight.title)}
-			<div class="flex items-start space-x-4">
+			<div
+				class="group flex cursor-pointer items-start space-x-4 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1"
+				style="animation-delay: {index * 150}ms;"
+			>
 				<div
 					class={cn(
-						'flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full',
+						'flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg',
 						getDynamicGradient(index)
 					)}
 				>
-					<highlight.icon size={24} class="text-white" />
+					<highlight.icon
+						size={24}
+						class="text-white transition-transform duration-300 group-hover:scale-110"
+					/>
 				</div>
-				<div>
-					<h5 class="mb-2 font-medium">{highlight.title}</h5>
-					<p class="text-gray-600">{highlight.description}</p>
+				<div class="transition-all duration-300 group-hover:translate-x-1">
+					<h5 class="mb-2 font-medium transition-all duration-300 group-hover:text-gray-800">
+						{highlight.title}
+					</h5>
+					<p class="text-gray-600 transition-all duration-300 group-hover:text-gray-700">
+						{highlight.description}
+					</p>
 				</div>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	div[class*='group'] {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

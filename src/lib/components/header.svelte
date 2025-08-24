@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Button } from '@/components/ui/button/index.js';
+
 	interface HeaderProps {
 		title?: string;
 		subtitle?: string;
@@ -18,10 +20,11 @@
 	<h1 class="text-2xl font-medium text-gray-600">
 		{title}<span class="text-gray-400">/{subtitle}</span>
 	</h1>
-	<button
-		class="rounded-full bg-black px-6 py-3 text-white transition-colors hover:bg-gray-800"
+	<Button
+		variant="default"
+		size="lg"
 		onclick={onCtaClick}
 	>
 		{ctaText}
-	</button>
+	</Button>
 </header>

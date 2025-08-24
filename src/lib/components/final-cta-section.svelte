@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Button } from '@/components/ui/button/index.js';
+
 	interface FinalCTAProps {
 		title?: string;
 		subtitle?: string;
@@ -12,4 +14,8 @@
 		{title}
 	</h3>
 	<h4 class="text-5xl font-medium">{subtitle}</h4>
+
+	<div class="mt-12">
+		<Button size="lg">Register Now</Button>
+	</div>
 </div>

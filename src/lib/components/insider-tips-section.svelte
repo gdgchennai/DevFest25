@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { 
-		Target, 
-		Clock, 
-		Users, 
-		Battery, 
-		Calendar, 
-		Download, 
-		MessageCircle, 
-		Hash, 
-		Utensils 
+	import {
+		Target,
+		Clock,
+		Users,
+		Battery,
+		Calendar,
+		Download,
+		MessageCircle,
+		Hash,
+		Utensils
 	} from '@lucide/svelte';
 
 	interface TipItem {
@@ -98,19 +98,46 @@
 
 <div class="flex min-h-[500px] flex-col justify-between rounded-3xl bg-white p-10">
 	<div>
-		<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">
+		<h3
+			class="mb-2 text-3xl font-bold transition-all duration-300 hover:scale-105"
+			style="font-family: 'Caveat', sans-serif;"
+		>
 			{title}
 		</h3>
-		<h4 class="mb-6 text-2xl font-medium tracking-tight">{subtitle}</h4>
+		<h4
+			class="mb-6 text-2xl font-medium tracking-tight transition-all duration-300 hover:text-gray-700"
+		>
+			{subtitle}
+		</h4>
 	</div>
-	<div class="space-y-3 flex flex-col gap-3">
-		{#each tips as tip (tip.text)}
+	<div class="flex flex-col gap-3 space-y-3">
+		{#each tips as tip, index (tip.text)}
 			<div
-				class="transform rounded-full px-6 py-3 text-center {tip.bgColor} {tip.textColor} {tip.rotation} flex items-center justify-center"
+				class="group transform rounded-full px-6 py-3 text-center {tip.bgColor} {tip.textColor} {tip.rotation} flex cursor-pointer items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:scale-105 hover:rotate-0 hover:shadow-sm"
+				style="animation-delay: {index * 100}ms;"
 			>
-				<tip.icon size={24} />
-				<span class="ml-3 text-start">{tip.text}</span>
+				<div class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+					<tip.icon size={24} />
+				</div>
+				<span class="ml-3 text-start transition-all duration-300 group-hover:font-medium"
+					>{tip.text}</span
+				>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	div[class*='group'] {
+		animation: fadeInUp 0.6s ease-out forwards;
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Button } from '@/components/ui/button/index.js';
+
 	interface HeroProps {
 		title?: string;
 		subtitle?: string;
@@ -31,17 +33,11 @@
 		</p>
 	</div>
 	<div class="flex gap-4">
-		<button
-			class="rounded-full bg-black px-6 py-4 font-medium text-white transition-colors hover:bg-gray-800"
-			onclick={onPrimaryCtaClick}
-		>
+		<Button variant="default" size="lg" onclick={onPrimaryCtaClick}>
 			{primaryCtaText}
-		</button>
-		<button
-			class="rounded-full bg-gray-200 px-6 py-4 font-medium text-gray-700 transition-colors hover:bg-gray-300"
-			onclick={onSecondaryCtaClick}
-		>
+		</Button>
+		<Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
 			{secondaryCtaText}
-		</button>
+		</Button>
 	</div>
 </div>
