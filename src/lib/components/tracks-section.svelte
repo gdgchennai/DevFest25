@@ -108,12 +108,12 @@
 </script>
 
 <div
-	class="flex flex-col items-start justify-between gap-10 rounded-3xl bg-white p-10 lg:col-span-3"
+	class="flex flex-col items-start justify-between gap-10 rounded-3xl bg-white p-6 lg:col-span-3 lg:p-10"
 >
 	<!-- Title and subtitle -->
 	<div class="mb-8">
 		<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">{title}</h3>
-		<h4 class="mb-4 text-4xl font-medium tracking-tight">{subtitle}</h4>
+		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		<p class="text-gray-600">{description}</p>
 	</div>
 

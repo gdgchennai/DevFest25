@@ -38,10 +38,10 @@
 	}: FAQProps = $props();
 </script>
 
-<div class="rounded-3xl bg-white p-10">
+<div class="rounded-3xl bg-white p-6 lg:p-10">
 	<div class="mb-8">
 		<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">{title}</h3>
-		<h4 class="text-2xl font-medium">{subtitle}</h4>
+		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 	</div>
 	<div class="space-y-4">
 		{#each items as item, index (item.question)}

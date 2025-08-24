@@ -51,13 +51,13 @@
 	}: SponsorsProps = $props();
 </script>
 
-<div class="rounded-3xl bg-white p-10 lg:col-span-3">
+<div class="rounded-3xl bg-white p-6 lg:col-span-3 lg:p-10">
 	<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">
 				{title}
 			</h3>
-			<h4 class="text-4xl font-medium">{subtitle}</h4>
+			<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		</div>
 		<Button size="lg" onclick={onCtaClick}>{ctaText}</Button>
 	</div>
@@ -65,7 +65,7 @@
 	<!-- Title Sponsor -->
 	<div class="mb-8">
 		<h5 class="mb-4 text-lg font-medium text-gray-900">Title Sponsor</h5>
-		<div class="rounded-xl border-2 border-dashed border-gray-300 p-8 text-center">
+		<div class="rounded-xl border-2 border-dashed border-gray-300 p-4 text-center lg:p-8">
 			<div class="mx-auto mb-3 flex h-16 w-32 items-center justify-center rounded-lg bg-gray-100">
 				<span class="text-sm text-gray-500">{titleSponsorText}</span>
 			</div>
@@ -78,7 +78,7 @@
 		<h5 class="mb-4 text-lg font-medium text-gray-900">Gold Sponsors</h5>
 		<div class="grid grid-cols-2 gap-6 md:grid-cols-3">
 			{#each Array.from({ length: goldSponsorsCount }, (_, i) => i) as i (i)}
-				<div class="rounded-xl border-2 border-dashed border-gray-300 p-6 text-center">
+				<div class="rounded-xl border-2 border-dashed border-gray-300 p-4 text-center lg:p-6">
 					<div class="mx-auto mb-2 flex h-12 w-24 items-center justify-center rounded bg-gray-100">
 						<span class="text-xs text-gray-500">Logo</span>
 					</div>
@@ -93,7 +93,7 @@
 		<h5 class="mb-4 text-lg font-medium text-gray-900">Community Partners</h5>
 		<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
 			{#each communityPartners as partner (partner.name)}
-				<div class="rounded-lg bg-gray-50 p-4 text-center">
+				<div class="rounded-lg bg-gray-50 p-3 text-center lg:p-4">
 					<div class="mx-auto mb-2 flex h-16 w-16 items-center justify-center">
 						<img
 							src={partner.logo}

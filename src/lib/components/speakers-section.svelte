@@ -92,13 +92,13 @@
 	}
 </script>
 
-<div class="rounded-3xl bg-white p-10 lg:col-span-3">
+<div class="rounded-3xl bg-white p-6 lg:col-span-3 lg:p-10">
 	<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 		<div>
 			<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">
 				{title}
 			</h3>
-			<h4 class="text-4xl font-medium">{subtitle}</h4>
+			<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		</div>
 		<Button size="lg" onclick={onCtaClick}>{ctaText}</Button>
 	</div>

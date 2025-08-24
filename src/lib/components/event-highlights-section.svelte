@@ -65,7 +65,7 @@
 </script>
 
 <div
-	class="flex flex-col items-start justify-between gap-2 rounded-3xl bg-white p-10 lg:col-span-2"
+	class="flex flex-col items-start justify-between gap-2 rounded-3xl bg-white p-6 lg:col-span-2 lg:p-10"
 >
 	<div class="flex flex-col gap-2">
 		<h3
@@ -74,9 +74,7 @@
 		>
 			{title}
 		</h3>
-		<h4 class="text-2xl font-medium tracking-tight transition-all duration-300 hover:text-gray-700">
-			{subtitle}
-		</h4>
+		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 	</div>
 
 	<div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">

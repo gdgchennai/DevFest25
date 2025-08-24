@@ -145,20 +145,20 @@
 	});
 </script>
 
-<div class="relative overflow-hidden rounded-3xl bg-white p-10">
+<div class="relative overflow-hidden rounded-3xl bg-white p-6 lg:p-10">
 	<h3 class="mb-2 text-xl font-bold" style="font-family: 'Caveat', sans-serif;">
 		{title}
 	</h3>
-	<h4 class="mb-6 text-2xl font-medium tracking-tight">{subtitle}</h4>
+	<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 
 	<!-- Gradient overlays for fade effect -->
 	<div
 		class="pointer-events-none absolute top-32 right-0 left-0 z-10 h-20 bg-gradient-to-b from-white via-white to-transparent"
-	/>
+	></div>
 
 	<div
 		class="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-20 bg-gradient-to-t from-white via-white to-transparent"
-	/>
+	></div>
 
 	<!-- Marquee container -->
 	<div bind:this={containerRef} class="relative h-80 overflow-hidden">

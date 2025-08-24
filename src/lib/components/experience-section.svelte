@@ -51,7 +51,7 @@
 	}: ExperienceProps = $props();
 </script>
 
-<div class="flex min-h-[500px] flex-col justify-between rounded-3xl bg-white p-10">
+<div class="flex min-h-[500px] flex-col justify-between rounded-3xl bg-white p-6 lg:p-10">
 	<div>
 		<h3
 			class="mb-2 text-xl font-bold transition-all duration-300 hover:scale-105"
@@ -59,11 +59,7 @@
 		>
 			{title}
 		</h3>
-		<h4
-			class="mb-6 text-2xl font-medium tracking-tight transition-all duration-300 hover:text-gray-700"
-		>
-			{subtitle}
-		</h4>
+		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 	</div>
 	<div class="space-y-3">
 		{#each items as item, index (item.text)}

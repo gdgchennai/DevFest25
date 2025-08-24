@@ -23,7 +23,7 @@
 </script>
 
 <div
-	class="flex flex-col items-start justify-between gap-6 rounded-3xl bg-white p-10 lg:col-span-2"
+	class="flex flex-col items-start justify-between gap-6 rounded-3xl bg-white p-6 lg:col-span-2 lg:p-10"
 >
 	<!-- Grouped titles and venue address -->
 	<div class="flex w-full flex-col gap-4">
@@ -34,11 +34,7 @@
 			>
 				{title}
 			</h3>
-			<h4
-				class="text-2xl font-medium tracking-tight transition-all duration-300 hover:text-gray-700"
-			>
-				{subtitle}
-			</h4>
+			<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		</div>
 
 		<!-- Venue details and amenities grouped together -->
@@ -182,7 +178,7 @@
 				href="https://m.uber.com/go/home?drop%5B0%5D=%7B%22addressLine1%22%3A%22IITM%20RESEARCH%20PARK%22%2C%22addressLine2%22%3A%22Kanagam%2C%20Tharamani%2C%20Chennai%2C%20Tamil%20Nadu%22%2C%22id%22%3A%22ChIJN7eu5YdnUjoRMpX4pNFN7tw%22%2C%22source%22%3A%22SEARCH%22%2C%22latitude%22%3A12.99105%2C%22longitude%22%3A80.2429354%2C%22provider%22%3A%22google_places%22%7D&marketing_vistor_id=d28b19e6-3212-4721-aa79-0dddc9a59fa4&uclick_id=476d268c-032c-4939-942e-37c4199af308"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-4 transition-colors hover:bg-gray-200 sm:w-40"
+				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
 			>
 				<img src="/cabs/uber.png" alt="Uber" class="h-8 w-auto" />
 			</a>
@@ -191,7 +187,7 @@
 				href="https://book.olacabs.com/?drop=12.9909029%2C80.2427187&pickup=my_location&drop_lat=12.991&drop_lng=80.2429&drop_name=IITM%20Research%20Park%2C%20Kanagam%20Tharamani%20Chennai%20Tamil%20Nadu%20600113%20India"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-4 transition-colors hover:bg-gray-200 sm:w-40"
+				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
 			>
 				<img src="/cabs/ola.png" alt="Ola" class="h-9 w-auto" />
 			</a>
@@ -200,7 +196,7 @@
 				href="https://rapido.bike/?drop=12.9909029,80.2427187&pickup=my_location"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-4 transition-colors hover:bg-gray-200 sm:w-40"
+				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
 			>
 				<img src="/cabs/rapido.png" alt="Rapido" class="h-11 w-auto" />
 			</a>

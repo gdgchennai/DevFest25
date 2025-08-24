@@ -119,10 +119,10 @@
 	}
 </script>
 
-<div class="rounded-3xl bg-white p-10 lg:col-span-2">
+<div class="rounded-3xl bg-white p-6 lg:col-span-2 lg:p-10">
 	<div class="mb-8">
 		<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">{title}</h3>
-		<h4 class="mb-4 text-4xl font-medium">{subtitle}</h4>
+		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		<p class="text-gray-600">{date} • {location}</p>
 	</div>
 
@@ -135,7 +135,7 @@
 					<div class="text-sm font-medium text-gray-900">{item.time}</div>
 				</div>
 				<div class="flex-1">
-					<div class="rounded-lg border-l-3 {styles.borderColor} {styles.bgColor} p-4">
+					<div class="rounded-lg border-l-3 {styles.borderColor} {styles.bgColor} p-3 lg:p-4">
 						<div class="flex items-start justify-between">
 							<div class="flex-1">
 								<h5 class="mb-1 font-medium {styles.textColor}">{item.title}</h5>
