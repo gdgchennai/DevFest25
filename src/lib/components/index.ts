@@ -11,3 +11,6 @@ export { default as SponsorsSection } from './sponsors-section.svelte';
 export { default as VenueSection } from './venue-section.svelte';
 export { default as FAQSection } from './faq-section.svelte';
 export { default as FinalCTASection } from './final-cta-section.svelte';
+export { default as SEO } from './seo.svelte';
+export { default as SocialMediaSection } from './social-media-section.svelte';
+export { default as FooterLinksSection } from './footer-links-section.svelte';

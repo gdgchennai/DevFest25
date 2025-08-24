@@ -115,9 +115,11 @@
 				<div class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
 					<tip.icon size={24} />
 				</div>
-				<span class="ml-3 text-start transition-all duration-300 group-hover:font-medium"
-					>{tip.text}</span
+				<span
+					class="ml-3 text-start leading-tight transition-all duration-300 group-hover:font-medium"
 				>
+					{tip.text}
+				</span>
 			</div>
 		{/each}
 	</div>
