@@ -16,6 +16,8 @@
 	<h4 class="text-5xl font-medium">{subtitle}</h4>
 
 	<div class="mt-12">
-		<Button size="lg">Register now</Button>
+		<div>
+			<script src="https://widget.konfhub.com/widget.js" button_id="btn_0667ead42a4d"></script>
+		</div>
 	</div>
 </div>

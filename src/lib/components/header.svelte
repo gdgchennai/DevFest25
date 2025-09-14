@@ -20,7 +20,7 @@
 	<h1 class="text-2xl font-medium text-gray-600">
 		{title}<span class="text-gray-400">/{subtitle}</span>
 	</h1>
-	<Button variant="default" size="lg" onclick={onCtaClick}>
-		{ctaText}
-	</Button>
+	<div>
+		<script src="https://widget.konfhub.com/widget.js" button_id="btn_0667ead42a4d"></script>
+	</div>
 </header>
