@@ -20,7 +20,8 @@
 			},
 			{
 				question: 'Is this event free?',
-				answer: 'Yes, DevFest is free for all attendees.'
+				answer:
+					'No, DevFest Chennai 2025 has two ticket categories: Student tickets and Professional tickets. Please check our registration page for current pricing.'
 			},
 			{
 				question: 'Who can attend?',
@@ -31,8 +32,9 @@
 				answer: 'YES! Get recordings, slides, and resources to continue learning.'
 			},
 			{
-				question: 'Can I get help with travel and accommodation?',
-				answer: 'YES! We provide information and support for travel arrangements.'
+				question: 'Do you provide accommodation and travel assistance?',
+				answer:
+					'No, we do not provide accommodation or travel arrangements. Attendees are responsible for their own travel and accommodation arrangements.'
 			}
 		]
 	}: FAQProps = $props();
