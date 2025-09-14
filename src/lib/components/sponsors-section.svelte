@@ -62,8 +62,80 @@
 		<Button size="lg" onclick={onCtaClick}>{ctaText}</Button>
 	</div>
 
-	<!-- Title Sponsor -->
+	<!-- Sponsorship Benefits -->
 	<div class="mb-8">
+		<div class="rounded-xl border border-white bg-gray-50 p-6 lg:p-8">
+			<h5 class="mb-4 text-lg font-medium text-gray-900">Why Sponsor DevFest Chennai 2025?</h5>
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<div class="flex items-start gap-3">
+					<div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
+						<svg
+							class="h-4 w-4 text-blue-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+							></path>
+						</svg>
+					</div>
+					<div>
+						<h6 class="font-medium text-gray-900">Reach 500+ Developers</h6>
+						<p class="text-sm text-gray-600">Connect with Chennai's top tech talent</p>
+					</div>
+				</div>
+				<div class="flex items-start gap-3">
+					<div class="flex h-8 w-8 items-center justify-center rounded-full bg-purple-100">
+						<svg
+							class="h-4 w-4 text-purple-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 10V3L4 14h7v7l9-11h-7z"
+							></path>
+						</svg>
+					</div>
+					<div>
+						<h6 class="font-medium text-gray-900">Brand Visibility</h6>
+						<p class="text-sm text-gray-600">Logo placement and booth space</p>
+					</div>
+				</div>
+				<div class="flex items-start gap-3">
+					<div class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+						<svg
+							class="h-4 w-4 text-green-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+							></path>
+						</svg>
+					</div>
+					<div>
+						<h6 class="font-medium text-gray-900">Recruitment</h6>
+						<p class="text-sm text-gray-600">Direct access to skilled developers</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Title Sponsor -->
+	<!-- <div class="mb-8">
 		<h5 class="mb-4 text-lg font-medium text-gray-900">Title Sponsor</h5>
 		<div class="rounded-xl border-2 border-dashed border-gray-300 p-4 text-center lg:p-8">
 			<div class="mx-auto mb-3 flex h-16 w-32 items-center justify-center rounded-lg bg-gray-100">
@@ -71,10 +143,10 @@
 			</div>
 			<p class="text-sm text-gray-600">{titleSponsorDescription}</p>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Gold Sponsors -->
-	<div class="mb-8">
+	<!-- <div class="mb-8">
 		<h5 class="mb-4 text-lg font-medium text-gray-900">Gold Sponsors</h5>
 		<div class="grid grid-cols-2 gap-6 md:grid-cols-3">
 			{#each Array.from({ length: goldSponsorsCount }, (_, i) => i) as i (i)}
@@ -86,7 +158,7 @@
 				</div>
 			{/each}
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Community Partners -->
 	<div class="mb-8">

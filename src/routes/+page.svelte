@@ -28,9 +28,9 @@
 		console.log('Agenda clicked');
 	}
 
-	function handleViewFullSpeakers() {
-		// Handle view full speakers
-		console.log('View full speakers clicked');
+	function handleApplyAsSpeaker() {
+		// Handle apply as speaker
+		console.log('Apply as speaker clicked');
 	}
 
 	function handleBecomeSponsor() {
@@ -87,7 +87,7 @@
 		<AgendaSection />
 		<InsiderTipsSection />
 		<TracksSection />
-		<SpeakersSection onCtaClick={handleViewFullSpeakers} />
+		<SpeakersSection onCtaClick={handleApplyAsSpeaker} />
 		<SponsorsSection onCtaClick={handleBecomeSponsor} />
 		<VenueSection />
 		<FAQSection />
