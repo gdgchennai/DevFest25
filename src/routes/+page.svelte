@@ -12,6 +12,7 @@
 		SponsorsSection,
 		VenueSection,
 		FAQSection,
+		MemoriesSection,
 		FinalCTASection,
 		SEO,
 		SocialMediaSection,
@@ -91,6 +92,13 @@
 		<SponsorsSection onCtaClick={handleBecomeSponsor} />
 		<VenueSection />
 		<FAQSection />
+	</div>
+
+	<!-- Memories Section (Full Width) -->
+	<MemoriesSection />
+
+	<!-- Final CTA Section (Full Width) -->
+	<div class="mx-auto max-w-7xl">
 		<FinalCTASection />
 	</div>
 

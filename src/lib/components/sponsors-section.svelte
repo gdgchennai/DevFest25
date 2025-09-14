@@ -28,24 +28,24 @@
 		goldSponsorsCount = 3,
 		communityPartners = [
 			{
-				name: 'Google Developer Groups Chennai',
-				logo: '/sponsors/community/gdgchennai.png',
+				name: 'Woman Techmakers Chennai',
+				logo: '/sponsors/community/wtm.png',
 				alt: 'GDG Chennai Logo'
 			},
 			{
-				name: 'Women Techmakers Chennai',
-				logo: '/sponsors/community/gdgchennai.png',
-				alt: 'WTM Chennai Logo'
+				name: 'Kotlin Users Group Chennai',
+				logo: '/sponsors/community/kugc.png',
+				alt: 'KUG Chennai Logo'
 			},
 			{
-				name: 'Developer Student Clubs Chennai',
-				logo: '/sponsors/community/gdgchennai.png',
+				name: 'JS Lovers Chennai',
+				logo: '/sponsors/community/jslovers.png',
 				alt: 'DSC Chennai Logo'
 			},
 			{
-				name: 'Chennai TechHub',
-				logo: '/sponsors/community/gdgchennai.png',
-				alt: 'Chennai TechHub Logo'
+				name: 'Chennai ReactJS',
+				logo: '/sponsors/community/chennaireactjs.png',
+				alt: 'Chennai ReactJS Logo'
 			}
 		]
 	}: SponsorsProps = $props();
@@ -59,7 +59,13 @@
 			</h3>
 			<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		</div>
-		<Button size="lg" onclick={onCtaClick}>{ctaText}</Button>
+		<Button
+			size="lg"
+			href="https://devfest25.gdgchennai.in/Sponsorship_Brochure.pdf"
+			target="_blank"
+		>
+			Become a Sponsor
+		</Button>
 	</div>
 
 	<!-- Sponsorship Benefits -->

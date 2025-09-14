@@ -27,19 +27,30 @@
 <div class="rounded-3xl bg-white p-6 lg:col-span-3 lg:p-10">
 	<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 		<div>
-			<h3 class="mb-2 text-3xl font-medium tracking-tight" style="font-family: 'Caveat', sans-serif;">
+			<h3
+				class="mb-2 text-3xl font-medium tracking-tight"
+				style="font-family: 'Caveat', sans-serif;"
+			>
 				{title}
 			</h3>
 			<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
 		</div>
-		<Button size="lg" onclick={onCtaClick}>{ctaText}</Button>
+		<Button
+			size="lg"
+			target="_blank"
+			href="https://docs.google.com/forms/d/e/1FAIpQLSf2tZ_LjDWZP_fX1R3GX3E0vUTA05iGlXF0-iPMD_w1SR_8FQ/viewform?usp=dialog"
+		>
+			Apply as Speaker
+		</Button>
 	</div>
 	<!-- Speaker Application Content -->
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 		<!-- Why Speak Section -->
 		<div class="space-y-6">
 			<div class="rounded-xl border border-white bg-gray-50 p-6">
-				<h5 class="mb-6 text-xl font-medium tracking-tight text-gray-900">Why Speak at DevFest Chennai?</h5>
+				<h5 class="mb-6 text-xl font-medium tracking-tight text-gray-900">
+					Why Speak at DevFest Chennai?
+				</h5>
 				<div class="grid grid-cols-1 gap-6">
 					<div
 						class="group flex cursor-pointer items-start space-x-4 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1"
@@ -163,8 +174,12 @@
 						</ul>
 					</div>
 					<div class="pt-4">
-						<Button size="lg" onclick={onCtaClick} class="w-full">
-							{ctaText}
+						<Button
+							size="lg"
+							href="https://docs.google.com/forms/d/e/1FAIpQLSf2tZ_LjDWZP_fX1R3GX3E0vUTA05iGlXF0-iPMD_w1SR_8FQ/viewform?usp=dialog"
+							target="_blank"
+						>
+							Apply as Speaker
 						</Button>
 					</div>
 				</div>

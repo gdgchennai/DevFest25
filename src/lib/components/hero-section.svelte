@@ -38,8 +38,8 @@
 		<div>
 			<script src="https://widget.konfhub.com/widget.js" button_id="btn_0667ead42a4d"></script>
 		</div>
-		<Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
+		<!-- <Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
 			{secondaryCtaText}
-		</Button>
+		</Button> -->
 	</div>
 </div>

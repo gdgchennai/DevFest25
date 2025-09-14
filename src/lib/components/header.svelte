@@ -17,9 +17,7 @@
 </script>
 
 <header class="mx-auto mb-8 flex max-w-7xl items-center justify-between leading-snug">
-	<h1 class="text-2xl font-medium text-gray-600">
-		{title}<span class="text-gray-400">/{subtitle}</span>
-	</h1>
+	<img src="/core/logo.png" alt="DevFest Chennai" class="aspect-auto h-10" />
 	<div>
 		<script src="https://widget.konfhub.com/widget.js" button_id="btn_0667ead42a4d"></script>
 	</div>

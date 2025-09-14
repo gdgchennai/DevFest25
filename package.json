@@ -19,6 +19,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@internationalized/date": "^3.8.1",
 		"@playwright/test": "^1.49.1",
 		"@sveltejs/adapter-cloudflare": "^7.0.0",
 		"@sveltejs/kit": "^2.22.0",
@@ -27,7 +28,9 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"@tailwindcss/vite": "^4.0.0",
 		"@vitest/browser": "^3.2.3",
+		"bits-ui": "^2.8.6",
 		"clsx": "^2.1.1",
+		"embla-carousel-svelte": "^8.6.0",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
@@ -50,6 +53,6 @@
 		"vitest-browser-svelte": "^0.1.0"
 	},
 	"dependencies": {
-		"@lucide/svelte": "^0.541.0"
+		"@lucide/svelte": "^0.515.0"
 	}
 }
