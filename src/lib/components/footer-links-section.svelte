@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib';
 	import { FileText, Shield, Users, Accessibility, Phone, HelpCircle } from '@lucide/svelte';
+	import { goto } from '$app/navigation';
 
 	interface FooterLink {
 		name: string;
@@ -32,7 +33,7 @@
 		},
 		{
 			name: 'Code of Conduct',
-			url: '/code-of-conduct',
+			url: '/conduct',
 			description: 'Community guidelines',
 			icon: Users,
 			gradient: 'bg-gradient-to-b from-purple-300 to-purple-500'
@@ -66,10 +67,10 @@
 		// Analytics tracking
 		console.log(`Footer link clicked: ${linkName}`);
 
-		// For now, just log. In a real app, you'd navigate to these pages
+		// Navigate to the page
 		if (url.startsWith('/')) {
-			// Internal navigation - would use SvelteKit's goto
-			console.log(`Navigating to: ${url}`);
+			// Internal navigation using SvelteKit's goto
+			goto(url);
 		} else {
 			// External link
 			window.open(url, '_blank', 'noopener,noreferrer');
