@@ -159,11 +159,9 @@
 
 		<!-- Coming Soon Overlay -->
 		<div class="absolute inset-0 flex items-center justify-center">
-			<div
-				class="rounded-2xl border border-white/20  p-8 text-center"
-			>
+			<div class="rounded-2xl border border-white/20 p-8 text-center">
 				<div
-					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 border border-white"
+					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-white bg-gray-50"
 				>
 					<svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
