@@ -74,31 +74,37 @@
 	}
 </script>
 
-<div class="rounded-3xl bg-white p-6 lg:p-10">
-	<div class="mb-8">
-		<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">
-			{title}
-		</h3>
-		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
-	</div>
+<div class="w-full bg-gray-100 p-4">
+	<div class="mx-auto max-w-7xl">
+		<div class="rounded-3xl bg-white p-8 lg:p-12">
+			<div class="mb-8 text-center">
+				<h3 class="mb-2 text-3xl font-bold" style="font-family: 'Caveat', sans-serif;">
+					{title}
+				</h3>
+				<h4 class="text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
+			</div>
 
-	<!-- Social Media Links -->
-	<div class="flex flex-wrap gap-3">
-		{#each links as link, index}
-			<button
-				onclick={() => handleSocialClick(link.url, link.name)}
-				class="group flex transform cursor-pointer items-center justify-center rounded-full px-6 py-3 text-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:scale-105 hover:rotate-0 hover:shadow-sm {link.gradient} text-white"
-				title={`Follow us on ${link.name}`}
-				style="animation-delay: {index * 100}ms;"
-			>
-				<div class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-					<link.icon size={24} />
-				</div>
-				<span class="ml-3 text-start transition-all duration-300 group-hover:font-medium">
-					{link.name}
-				</span>
-			</button>
-		{/each}
+			<!-- Social Media Links -->
+			<div class="flex flex-wrap justify-center gap-3">
+				{#each links as link, index}
+					<button
+						onclick={() => handleSocialClick(link.url, link.name)}
+						class="group flex transform cursor-pointer items-center justify-center rounded-full px-6 py-3 text-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:scale-105 hover:rotate-0 hover:shadow-sm {link.gradient} text-white"
+						title={`Follow us on ${link.name}`}
+						style="animation-delay: {index * 100}ms;"
+					>
+						<div
+							class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+						>
+							<link.icon size={24} />
+						</div>
+						<span class="ml-3 text-start transition-all duration-300 group-hover:font-medium">
+							{link.name}
+						</span>
+					</button>
+				{/each}
+			</div>
+		</div>
 	</div>
 </div>
 

@@ -15,8 +15,7 @@
 		MemoriesSection,
 		FinalCTASection,
 		SEO,
-		SocialMediaSection,
-		FooterLinksSection
+		SocialMediaSection
 	} from '$lib/components';
 
 	function handleRegisterClick() {
@@ -102,9 +101,6 @@
 		<FinalCTASection />
 	</div>
 
-	<!-- Footer Sections -->
-	<div class="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-6 lg:grid-cols-2">
-		<SocialMediaSection />
-		<FooterLinksSection />
-	</div>
+	<!-- Social Media Section (Full Width) -->
+	<SocialMediaSection />
 </div>
