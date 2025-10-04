@@ -168,38 +168,20 @@
 		</div>
 	</div>
 
-	<!-- Ride-sharing section -->
+	<!-- Google Maps section -->
 	<div class="flex w-full flex-col gap-4">
-		<h5 class="text-xl font-medium text-black">Book your ride now</h5>
-		<div
-			class="flex w-full flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-start"
-		>
-			<a
-				href="https://m.uber.com/go/home?drop%5B0%5D=%7B%22addressLine1%22%3A%22IITM%20RESEARCH%20PARK%22%2C%22addressLine2%22%3A%22Kanagam%2C%20Tharamani%2C%20Chennai%2C%20Tamil%20Nadu%22%2C%22id%22%3A%22ChIJN7eu5YdnUjoRMpX4pNFN7tw%22%2C%22source%22%3A%22SEARCH%22%2C%22latitude%22%3A12.99105%2C%22longitude%22%3A80.2429354%2C%22provider%22%3A%22google_places%22%7D&marketing_vistor_id=d28b19e6-3212-4721-aa79-0dddc9a59fa4&uclick_id=476d268c-032c-4939-942e-37c4199af308"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
-			>
-				<img src="/cabs/uber.png" alt="Uber" class="h-8 w-auto" />
-			</a>
-
-			<a
-				href="https://book.olacabs.com/?drop=12.9909029%2C80.2427187&pickup=my_location&drop_lat=12.991&drop_lng=80.2429&drop_name=IITM%20Research%20Park%2C%20Kanagam%20Tharamani%20Chennai%20Tamil%20Nadu%20600113%20India"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
-			>
-				<img src="/cabs/ola.png" alt="Ola" class="h-9 w-auto" />
-			</a>
-
-			<a
-				href="https://rapido.bike/?drop=12.9909029,80.2427187&pickup=my_location"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex h-[69px] w-full items-center justify-center rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200 sm:w-40 lg:p-4"
-			>
-				<img src="/cabs/rapido.png" alt="Rapido" class="h-11 w-auto" />
-			</a>
+		<h5 class="text-xl font-medium text-black">Venue Location</h5>
+		<div class="w-full overflow-hidden rounded-2xl">
+			<iframe
+				title="IITM Research Park Location"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9847461891644!2d80.24074!3d12.99105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267e5e56eb737%3A0xdceef44da4f895f2!2sIITM%20Research%20Park!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+				width="100%"
+				height="400"
+				style="border:0;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+			></iframe>
 		</div>
 	</div>
 </div>
