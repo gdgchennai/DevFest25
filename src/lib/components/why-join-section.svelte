@@ -131,17 +131,33 @@
 
 	onMount(() => {
 		const scrollSpeed = 1; // pixels per frame
+		let animationId: number;
+
+		// Calculate the height of one complete cycle
+		// Each benefit is 80px (h-20 = 5rem = 80px) + 16px gap (space-y-4 = 1rem = 16px)
+		const itemHeight = 96; // 80px + 16px gap
+		const cycleHeight = benefits.length * itemHeight;
 
 		const animate = () => {
 			scrollPosition += scrollSpeed;
 
-			// Let it scroll continuously through all duplicated content
-			// No reset needed - it will naturally loop through the duplicated array
+			// Reset scrollPosition to create seamless loop
+			// When we've scrolled through one full cycle, reset back
+			if (scrollPosition >= cycleHeight) {
+				scrollPosition = scrollPosition % cycleHeight;
+			}
 
-			requestAnimationFrame(animate);
+			animationId = requestAnimationFrame(animate);
 		};
 
-		requestAnimationFrame(animate);
+		animationId = requestAnimationFrame(animate);
+
+		// Cleanup function to stop animation when component is destroyed
+		return () => {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+			}
+		};
 	});
 </script>
 
