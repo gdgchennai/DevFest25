@@ -15,3 +15,4 @@ export { default as FinalCTASection } from './final-cta-section.svelte';
 export { default as SEO } from './seo.svelte';
 export { default as SocialMediaSection } from './social-media-section.svelte';
 export { default as FooterLinksSection } from './footer-links-section.svelte';
+export { default as ScrollToTop } from './scroll-to-top.svelte';
