@@ -47,7 +47,11 @@
 	</div>
 	<div class="flex gap-4">
 		<div>
-			<script src="https://widget.konfhub.com/widget.js" button_id="btn_0667ead42a4d"></script>
+			<script
+				src="https://widget.konfhub.com/widget.js"
+				button_id="btn_0667ead42a4d"
+				defer
+			></script>
 		</div>
 		<!-- <Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
 			{secondaryCtaText}
