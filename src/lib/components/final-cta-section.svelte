@@ -16,12 +16,8 @@
 	<h4 class="text-5xl font-medium">{subtitle}</h4>
 
 	<div class="mt-12">
-		<div>
-			<script
-				src="https://widget.konfhub.com/widget.js"
-				button_id="btn_0667ead42a4d"
-				defer
-			></script>
-		</div>
+		<Button href="https://konfhub.com/devfest-2025-chennai#tickets" target="_blank">
+			Get Tickets
+		</Button>
 	</div>
 </div>

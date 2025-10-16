@@ -46,13 +46,9 @@
 		</p>
 	</div>
 	<div class="flex gap-4">
-		<div>
-			<script
-				src="https://widget.konfhub.com/widget.js"
-				button_id="btn_0667ead42a4d"
-				defer
-			></script>
-		</div>
+		<Button href="https://konfhub.com/devfest-2025-chennai#tickets" target="_blank">
+			Get Tickets
+		</Button>
 		<!-- <Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
 			{secondaryCtaText}
 		</Button> -->
