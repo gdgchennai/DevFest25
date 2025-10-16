@@ -16,12 +16,11 @@
 	<h4 class="text-5xl font-medium">{subtitle}</h4>
 
 	<div class="mt-12">
-		<div>
-			<script
-				src="https://widget.konfhub.com/widget.js"
-				button_id="btn_0667ead42a4d"
-				defer
-			></script>
-		</div>
+		<Button
+			size="lg"
+			onclick={() => window.open('https://konfhub.com/devfest-2025-chennai#tickets', '_blank')}
+		>
+			Register now
+		</Button>
 	</div>
 </div>
