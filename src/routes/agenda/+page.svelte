@@ -104,7 +104,7 @@
 			<div class="border-b border-gray-200">
 				<div class="overflow-x-auto">
 					<nav class="-mb-px flex space-x-4 sm:space-x-8" aria-label="Tabs">
-						{#each tracks as track}
+						{#each tracks as track (track.id)}
 							<button
 								onclick={() => selectTrack(track.id)}
 								class="flex-shrink-0 border-b-2 px-2 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-200 {selectedTrackId ===
@@ -142,7 +142,7 @@
 							{@const sessionAtTime = getSessionAtTime(timeSlot.time)}
 							<div class="flex items-start gap-6">
 								<!-- Time Column -->
-								<div class="w-24 flex-shrink-0 pt-2 text-right">
+								<div class="w-24 flex-shrink-0 pt-2 text-start w-auto sm:text-right">
 									<div class="text-sm font-medium text-gray-900">{timeSlot.label}</div>
 								</div>
 
