@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
-	import {
-		tracks,
-		getTrackById,
-		getSessionTypeStyles,
-		type Session,
-		type Track
-	} from '$lib/data/agenda';
+	import { tracks, getTrackById, getSessionTypeStyles, type Session } from '$lib/data/agenda';
 	import { SEO } from '$lib/components';
 
 	let selectedTrackId: 'track1' | 'track2' | 'track3' = $state('track1');
@@ -140,10 +134,10 @@
 					<div class="space-y-4">
 						{#each currentTrack.timeSlots as timeSlot (timeSlot.time)}
 							{@const sessionAtTime = getSessionAtTime(timeSlot.time)}
-							<div class="flex items-start gap-6">
+							<div class="flex items-start gap-4 sm:gap-6">
 								<!-- Time Column -->
-								<div class="w-24 flex-shrink-0 pt-2 text-start w-auto sm:text-right">
-									<div class="text-sm font-medium text-gray-900">{timeSlot.label}</div>
+								<div class="w-16 flex-shrink-0 pt-2 text-left sm:w-24 sm:text-right">
+									<div class="text-xs font-medium text-gray-900 sm:text-sm">{timeSlot.label}</div>
 								</div>
 
 								<!-- Session Column -->
@@ -176,7 +170,9 @@
 														<p class="mb-2 text-sm text-gray-600">{sessionAtTime.description}</p>
 													{/if}
 
-													<div class="flex items-center gap-4 text-xs text-gray-500">
+													<div
+														class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
+													>
 														<span>⏱️ {sessionAtTime.duration} min</span>
 														<span
 															>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
