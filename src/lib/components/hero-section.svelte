@@ -46,11 +46,9 @@
 		</p>
 	</div>
 	<div class="flex gap-4">
-		<Button href="https://konfhub.com/devfest-2025-chennai#tickets" target="_blank">
+		<Button href="https://konfhub.com/devfest-2025-chennai#tickets" target="_blank" size="lg">
 			Get Tickets
 		</Button>
-		<!-- <Button variant="secondary" size="lg" onclick={onSecondaryCtaClick}>
-			{secondaryCtaText}
-		</Button> -->
+		<Button href="/agenda" variant="outline" size="lg">View Agenda</Button>
 	</div>
 </div>

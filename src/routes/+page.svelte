@@ -17,6 +17,7 @@
 		SEO,
 		SocialMediaSection
 	} from '$lib/components';
+	import { goto } from '$app/navigation';
 
 	function handleRegisterClick() {
 		// Handle registration click
@@ -24,8 +25,8 @@
 	}
 
 	function handleAgendaClick() {
-		// Handle agenda click
-		console.log('Agenda clicked');
+		// Navigate to agenda page
+		goto('/agenda');
 	}
 
 	function handleApplyAsSpeaker() {
@@ -87,7 +88,7 @@
 		<AgendaSection />
 		<InsiderTipsSection />
 		<TracksSection />
-		<SpeakersSection onCtaClick={handleApplyAsSpeaker} />
+		<!-- <SpeakersSection onCtaClick={handleApplyAsSpeaker} /> -->
 		<SponsorsSection onCtaClick={handleBecomeSponsor} />
 		<VenueSection />
 		<FAQSection />

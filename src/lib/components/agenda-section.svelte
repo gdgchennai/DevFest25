@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { Button } from '@/components/ui/button/index.js';
+	import { Clock } from '@lucide/svelte';
+
 	interface AgendaItem {
 		time: string;
 		title: string;
@@ -126,58 +129,38 @@
 		<p class="text-gray-600">{date} • {location}</p>
 	</div>
 
-	<!-- Timeline schedule with blur and overlay -->
-	<div class="relative">
-		<!-- Blurred agenda content -->
-		<div class="space-y-3 blur-sm">
-			{#each items as item (item.time)}
-				{@const styles = getTypeStyles(item.type)}
-				<div class="flex items-start gap-2 sm:gap-4">
-					<div class="w-16 flex-shrink-0 pt-2 text-right sm:w-20">
-						<div class="text-sm font-medium text-gray-900">{item.time}</div>
-					</div>
-					<div class="flex-1">
-						<div class="rounded-lg border-l-3 {styles.borderColor} {styles.bgColor} p-3 lg:p-4">
-							<div class="flex items-start justify-between">
-								<div class="flex-1">
-									<h5 class="mb-1 font-medium {styles.textColor}">{item.title}</h5>
-									{#if item.description}
-										<p class="text-sm text-gray-600">{item.description}</p>
-									{/if}
-								</div>
-								{#if item.speaker || item.track}
-									<span class="ml-3 rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor}">
-										{item.track ? item.track : item.speaker}
-									</span>
+	<!-- Timeline schedule preview -->
+	<div class="space-y-3">
+		{#each items.slice(0, 4) as item (item.time)}
+			{@const styles = getTypeStyles(item.type)}
+			<div class="flex items-start gap-2 sm:gap-4">
+				<div class="w-16 flex-shrink-0 pt-2 text-right sm:w-20">
+					<div class="text-sm font-medium text-gray-900">{item.time}</div>
+				</div>
+				<div class="flex-1">
+					<div class="rounded-lg border-l-3 {styles.borderColor} {styles.bgColor} p-3 lg:p-4">
+						<div class="flex items-start justify-between">
+							<div class="flex-1">
+								<h5 class="mb-1 font-medium {styles.textColor}">{item.title}</h5>
+								{#if item.description}
+									<p class="text-sm text-gray-600">{item.description}</p>
 								{/if}
 							</div>
+							{#if item.speaker || item.track}
+								<span class="ml-3 rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor}">
+									{item.track ? item.track : item.speaker}
+								</span>
+							{/if}
 						</div>
 					</div>
 				</div>
-			{/each}
-		</div>
-
-		<!-- Coming Soon Overlay -->
-		<div class="absolute inset-0 flex items-center justify-center">
-			<div class="rounded-2xl border border-white/20 p-8 text-center">
-				<div
-					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-white bg-gray-50"
-				>
-					<svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-						></path>
-					</svg>
-				</div>
-				<h5 class="mb-2 text-xl font-bold text-gray-900">Coming Soon</h5>
-				<p class="text-sm text-gray-600">
-					We're crafting an amazing agenda for you. Stay tuned for updates!
-				</p>
 			</div>
-		</div>
+		{/each}
+	</div>
+
+	<!-- View Full Agenda Button -->
+	<div class="mt-6 text-center">
+		<Button href="/agenda" size="lg">View Full Agenda</Button>
 	</div>
 </div>
 

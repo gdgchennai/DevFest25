@@ -10,6 +10,7 @@
 		Hash,
 		Utensils
 	} from '@lucide/svelte';
+	import { onMount } from 'svelte';
 
 	interface TipItem {
 		text: string;
@@ -94,48 +95,80 @@
 			}
 		]
 	}: InsiderTipsProps = $props();
+
+	// Create duplicated tips for seamless scrolling
+	let duplicatedTips = $state([...tips, ...tips, ...tips, ...tips]);
+	let scrollPosition = $state(0);
+	let containerRef: HTMLDivElement;
+
+	onMount(() => {
+		const scrollSpeed = 0.5; // pixels per frame (slower than why-join)
+		let animationId: number;
+
+		// Calculate the height of one complete cycle
+		// Each tip is approximately 60px height + 12px gap (space-y-3 = 0.75rem = 12px)
+		const itemHeight = 72; // approximate height including gap
+		const cycleHeight = tips.length * itemHeight;
+
+		const animate = () => {
+			scrollPosition += scrollSpeed;
+
+			// Reset scrollPosition to create seamless loop
+			if (scrollPosition >= cycleHeight) {
+				scrollPosition = scrollPosition % cycleHeight;
+			}
+
+			animationId = requestAnimationFrame(animate);
+		};
+
+		animationId = requestAnimationFrame(animate);
+
+		// Cleanup function to stop animation when component is destroyed
+		return () => {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+			}
+		};
+	});
 </script>
 
-<div class="flex min-h-[500px] flex-col justify-between rounded-3xl bg-white p-6 lg:p-10">
-	<div>
-		<h3
-			class="mb-2 text-3xl font-bold transition-all duration-300 hover:scale-105"
-			style="font-family: 'Caveat', sans-serif;"
+<div class="relative overflow-hidden rounded-3xl bg-white p-6 lg:p-10">
+	<h3 class="mb-2 text-xl font-bold" style="font-family: 'Caveat', sans-serif;">
+		{title}
+	</h3>
+	<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
+
+	<!-- Gradient overlays for fade effect -->
+	<div
+		class="pointer-events-none absolute top-[110px] right-0 left-0 z-10 h-20 bg-gradient-to-b from-white via-white to-transparent"
+	></div>
+
+	<div
+		class="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-20 bg-gradient-to-t from-white via-white to-transparent"
+	></div>
+
+	<!-- Marquee container -->
+	<div bind:this={containerRef} class="relative h-[500px] overflow-hidden">
+		<div
+			class="flex flex-col gap-3 space-y-3 transition-transform duration-1000 ease-linear"
+			style="transform: translateY(-{scrollPosition}px)"
 		>
-			{title}
-		</h3>
-		<h4 class="mb-6 text-xl font-medium tracking-tight sm:text-2xl">{subtitle}</h4>
-	</div>
-	<div class="flex flex-col gap-3 space-y-3">
-		{#each tips as tip, index (tip.text)}
-			<div
-				class="group transform rounded-full px-6 py-3 text-center {tip.bgColor} {tip.textColor} {tip.rotation} flex cursor-pointer items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:scale-105 hover:rotate-0 hover:shadow-sm"
-				style="animation-delay: {index * 100}ms;"
-			>
-				<div class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-					<tip.icon size={24} />
-				</div>
-				<span
-					class="ml-3 text-start leading-tight transition-all duration-300 group-hover:font-medium"
+			{#each duplicatedTips as tip, index (index)}
+				<div
+					class="group flex transform cursor-pointer items-center justify-center rounded-full px-6 py-3 text-center {tip.bgColor} {tip.textColor} {tip.rotation} transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:scale-105 hover:rotate-0 hover:shadow-sm"
 				>
-					{tip.text}
-				</span>
-			</div>
-		{/each}
+					<div
+						class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+					>
+						<tip.icon size={24} />
+					</div>
+					<span
+						class="ml-3 text-start leading-tight transition-all duration-300 group-hover:font-medium"
+					>
+						{tip.text}
+					</span>
+				</div>
+			{/each}
+		</div>
 	</div>
 </div>
-
-<style>
-	div[class*='group'] {
-		animation: fadeInUp 0.6s ease-out forwards;
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	@keyframes fadeInUp {
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>

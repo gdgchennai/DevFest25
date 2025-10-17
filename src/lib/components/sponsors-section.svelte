@@ -90,7 +90,7 @@
 						</svg>
 					</div>
 					<div>
-						<h6 class="font-medium text-gray-900">Reach 500+ Developers</h6>
+						<h6 class="font-medium text-gray-900">Reach 1000+ Developers</h6>
 						<p class="text-sm text-gray-600">Connect with Chennai's top tech talent</p>
 					</div>
 				</div>
@@ -146,7 +146,6 @@
 		<div class="rounded-xl border-2 border-dashed border-gray-300 p-4 text-center lg:p-8">
 			<div class="mx-auto mb-3 flex h-16 w-32 items-center justify-center rounded-lg bg-gray-100">
 				<span class="text-sm text-gray-500">{titleSponsorText}</span>
-			</div>
 			<p class="text-sm text-gray-600">{titleSponsorDescription}</p>
 		</div>
 	</div> -->
