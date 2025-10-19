@@ -154,26 +154,45 @@
 											class="rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} p-4 shadow-sm transition-all duration-200 hover:shadow-md"
 											style="min-height: {getSessionHeight(sessionAtTime)}"
 										>
-											<div class="flex items-start justify-between">
-												<div class="flex-1">
-													<div class="mb-2 flex items-center gap-2">
-														<h4 class="font-semibold {styles.textColor}">{sessionAtTime.title}</h4>
+											<div class="flex flex-col gap-3">
+												<!-- Header with title and calendar button -->
+												<div class="flex items-start justify-between">
+													<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+														<!-- Category badge - shows above title on mobile, after title on desktop -->
 														<span
-															class="rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor}"
+															class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
 														>
 															{sessionAtTime.type.charAt(0).toUpperCase() +
 																sessionAtTime.type.slice(1)}
 														</span>
+														<h4 class="font-semibold {styles.textColor} sm:order-1">
+															{sessionAtTime.title}
+														</h4>
 													</div>
 
+													<!-- Add to Calendar Button -->
+													{#if sessionAtTime.type !== 'break'}
+														<button
+															onclick={() => handleAddToCalendar(sessionAtTime)}
+															class="flex items-center gap-1 rounded-lg bg-blue-50 px-2 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none sm:px-3 sm:py-2"
+															title="Add to Calendar"
+														>
+															<Calendar size={14} />
+															<span class="hidden sm:inline">Add to Calendar</span>
+														</button>
+													{/if}
+												</div>
+
+												<!-- Session details -->
+												<div class="space-y-2">
 													{#if sessionAtTime.speaker}
-														<p class="mb-1 text-sm font-medium text-gray-700">
+														<p class="text-sm font-medium text-gray-700">
 															Speaker: {sessionAtTime.speaker}
 														</p>
 													{/if}
 
 													{#if sessionAtTime.description}
-														<p class="mb-2 text-sm text-gray-600">{sessionAtTime.description}</p>
+														<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
 													{/if}
 
 													<div
@@ -187,18 +206,6 @@
 														>
 													</div>
 												</div>
-
-												<!-- Add to Calendar Button -->
-												{#if sessionAtTime.type !== 'break'}
-													<button
-														onclick={() => handleAddToCalendar(sessionAtTime)}
-														class="ml-4 flex items-center gap-1 rounded-lg bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-														title="Add to Calendar"
-													>
-														<Calendar size={14} />
-														<span class="hidden sm:inline">Add to Calendar</span>
-													</button>
-												{/if}
 											</div>
 										</div>
 									{:else}
