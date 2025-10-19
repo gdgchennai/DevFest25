@@ -36,8 +36,8 @@ const commonSessions: Session[] = [
 	},
 	{
 		id: 'keynote',
-		title: 'Keynote by [ NAME ]',
-		speaker: 'Keynote Speaker',
+		title: 'TBD',
+		speaker: 'TBD',
 		description: 'Welcome to DevFest Chennai 2025',
 		type: 'keynote',
 		duration: 45,

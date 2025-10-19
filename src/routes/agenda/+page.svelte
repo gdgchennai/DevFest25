@@ -2,6 +2,8 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { tracks, getTrackById, getSessionTypeStyles, type Session } from '$lib/data/agenda';
 	import { SEO } from '$lib/components';
+	import { downloadICS } from '$lib/utils/calendar';
+	import { Calendar } from '@lucide/svelte';
 
 	let selectedTrackId: 'track1' | 'track2' | 'track3' = $state('track1');
 
@@ -59,6 +61,10 @@
 
 	function getSessionAtTime(time: string): Session | undefined {
 		return currentTrack?.sessions.find((session) => session.startTime === time);
+	}
+
+	function handleAddToCalendar(session: Session): void {
+		downloadICS(session);
 	}
 </script>
 
@@ -181,6 +187,18 @@
 														>
 													</div>
 												</div>
+
+												<!-- Add to Calendar Button -->
+												{#if sessionAtTime.type !== 'break'}
+													<button
+														onclick={() => handleAddToCalendar(sessionAtTime)}
+														class="ml-4 flex items-center gap-1 rounded-lg bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+														title="Add to Calendar"
+													>
+														<Calendar size={14} />
+														<span class="hidden sm:inline">Add to Calendar</span>
+													</button>
+												{/if}
 											</div>
 										</div>
 									{:else}
