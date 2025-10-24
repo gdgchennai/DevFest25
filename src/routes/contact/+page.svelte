@@ -222,17 +222,6 @@
 									<span>GDG Community Platform</span>
 								</a>
 								<a
-									href="https://meetup.com/gdg-chennai"
-									class="flex items-center space-x-3 text-gray-700 transition-colors hover:text-blue-600"
-								>
-									<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-										<path
-											d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-										/>
-									</svg>
-									<span>Meetup Group</span>
-								</a>
-								<a
 									href="https://discord.gg/gdgchennai"
 									class="flex items-center space-x-3 text-gray-700 transition-colors hover:text-blue-600"
 								>
@@ -271,13 +260,13 @@
 							/>
 						</svg>
 					</div>
-					<div class="ml-3">
+					<!-- <div class="ml-3">
 						<h3 class="text-sm font-medium text-red-800">Emergency Contact</h3>
 						<div class="mt-2 text-sm text-red-700">
 							<p>For urgent matters during the event, please contact our emergency hotline:</p>
 							<p class="mt-1"><strong>Emergency Hotline:</strong> +91-XXXXXXXXXX</p>
 							<p><strong>Available:</strong> 24/7 during event days</p>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
