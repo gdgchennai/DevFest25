@@ -266,8 +266,8 @@
 							<p>For urgent matters during the event, please contact our emergency hotline:</p>
 							<p class="mt-1"><strong>Emergency Hotline:</strong> +91-XXXXXXXXXX</p>
 							<p><strong>Available:</strong> 24/7 during event days</p>
-						</div> -->
-					</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
