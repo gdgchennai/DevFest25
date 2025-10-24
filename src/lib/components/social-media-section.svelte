@@ -40,7 +40,7 @@
 		},
 		{
 			name: 'YouTube',
-			url: 'https://youtube.com/@gdgchennai',
+			url: 'https://youtube.com/@GDGCHENNAICOMMUNITY',
 			icon: Youtube,
 			color: 'hover:text-red-500',
 			gradient: 'bg-gradient-to-b from-red-300 to-red-500'
@@ -54,7 +54,7 @@
 		},
 		{
 			name: 'Discord',
-			url: 'https://discord.gg/gdgchennai',
+			url: 'https://katb.in/gdgchennai-discord',
 			icon: MessageCircle,
 			color: 'hover:text-indigo-500',
 			gradient: 'bg-gradient-to-b from-indigo-300 to-indigo-500'
