@@ -1,5 +1,13 @@
 <script lang="ts">
-	import { SEO } from '$lib/components';
+	import {
+		Header,
+		SEO
+	} from '$lib/components';
+
+	function handleRegisterClick() {
+		// Handle registration click
+		console.log('Register clicked');
+	}
 
 	const seoConfig = {
 		title: 'Contact Us - DevFest Chennai 2025',
@@ -14,6 +22,8 @@
 <SEO config={seoConfig} />
 
 <div class="min-h-screen bg-gray-100 p-4">
+	<Header onCtaClick={handleRegisterClick} />
+
 	<div class="mx-auto max-w-6xl">
 		<div class="rounded-3xl bg-white p-8 lg:p-12">
 			<h1 class="mb-8 text-4xl font-bold text-gray-900" style="font-family: 'Caveat', sans-serif;">
@@ -155,8 +165,8 @@
 							<div>
 								<h3 class="text-lg font-medium text-gray-900">Code of Conduct</h3>
 								<p class="text-gray-600">Report violations or concerns</p>
-								<a href="mailto:conduct@gdgchennai.in" class="text-blue-600 hover:underline"
-									>conduct@gdgchennai.in</a
+								<a href="mailto:coc@gdgchennai.in" class="text-blue-600 hover:underline"
+									>coc@gdgchennai.in</a
 								>
 							</div>
 						</div>
@@ -240,7 +250,7 @@
 							<div class="space-y-2 text-gray-700">
 								<p><strong>Date:</strong> November 8, 2025</p>
 								<p><strong>Location:</strong> Chennai, India</p>
-								<p><strong>Venue:</strong> TBA</p>
+								<p><strong>Venue:</strong> <a href="https://maps.app.goo.gl/WdwRgJE3fJtpXFpK6" class="flex items-center space-x-3 text-gray-700 transition-colors hover:text-blue-600">IIT-M Research Park</a></p>
 								<p><strong>Time:</strong> 9:00 AM - 6:00 PM IST</p>
 							</div>
 						</div>
