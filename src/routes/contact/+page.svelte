@@ -249,7 +249,7 @@
 			</div>
 
 			<!-- Emergency Contact -->
-			<div class="mt-12 border-l-4 border-red-400 bg-red-50 p-6">
+			<!-- <div class="mt-12 border-l-4 border-red-400 bg-red-50 p-6">
 				<div class="flex">
 					<div class="flex-shrink-0">
 						<svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
@@ -260,16 +260,16 @@
 							/>
 						</svg>
 					</div>
-					<!-- <div class="ml-3">
+					<div class="ml-3">
 						<h3 class="text-sm font-medium text-red-800">Emergency Contact</h3>
 						<div class="mt-2 text-sm text-red-700">
 							<p>For urgent matters during the event, please contact our emergency hotline:</p>
 							<p class="mt-1"><strong>Emergency Hotline:</strong> +91-XXXXXXXXXX</p>
 							<p><strong>Available:</strong> 24/7 during event days</p>
 						</div>
-					</div> -->
+					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
