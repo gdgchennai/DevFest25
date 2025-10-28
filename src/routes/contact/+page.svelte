@@ -232,7 +232,7 @@
 									<span>GDG Community Platform</span>
 								</a>
 								<a
-									href="https://discord.gg/gdgchennai"
+									href="https://katb.in/gdgchennai-discord"
 									class="flex items-center space-x-3 text-gray-700 transition-colors hover:text-blue-600"
 								>
 									<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
