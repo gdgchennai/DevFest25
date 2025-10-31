@@ -1,11 +1,22 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
+	import {
+		Drawer,
+		DrawerContent,
+		DrawerHeader,
+		DrawerTitle,
+		DrawerDescription,
+		DrawerFooter,
+		DrawerClose
+	} from '$lib/components/ui/drawer';
 	import { tracks, getTrackById, getSessionTypeStyles, type Session } from '$lib/data/agenda';
 	import { SEO } from '$lib/components';
 	import { downloadICS } from '$lib/utils/calendar';
-	import { Calendar } from '@lucide/svelte';
+	import { Calendar, Linkedin, Twitter, ExternalLink } from '@lucide/svelte';
 
 	let selectedTrackId: 'track1' | 'track2' | 'track3' = $state('track1');
+	let selectedSession: Session | null = $state(null);
+	let drawerOpen = $state(false);
 
 	let currentTrack = $derived(getTrackById(selectedTrackId));
 
@@ -66,6 +77,17 @@
 	function handleAddToCalendar(session: Session): void {
 		downloadICS(session);
 	}
+
+	function handleSessionClick(session: Session, event: MouseEvent | KeyboardEvent): void {
+		// Don't open drawer if clicking the calendar button
+		if (event instanceof MouseEvent && (event.target as HTMLElement).closest('button')) {
+			return;
+		}
+		if (session.type !== 'break') {
+			selectedSession = session;
+			drawerOpen = true;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -114,9 +136,9 @@
 								aria-current={selectedTrackId === track.id ? 'page' : undefined}
 							>
 								<span class="block">{track.name}</span>
-								<span class="ml-2 hidden text-xs text-gray-400 sm:inline"
+								<!-- <span class="ml-2 hidden text-xs text-gray-400 sm:inline"
 									>({track.description})</span
-								>
+								> -->
 							</button>
 						{/each}
 					</nav>
@@ -150,64 +172,123 @@
 								<div class="flex-1">
 									{#if sessionAtTime}
 										{@const styles = getSessionTypeStyles(sessionAtTime.type)}
-										<div
-											class="rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} p-4 shadow-sm transition-all duration-200 hover:shadow-md"
-											style="min-height: {getSessionHeight(sessionAtTime)}"
-										>
-											<div class="flex flex-col gap-3">
-												<!-- Header with title and calendar button -->
-												<div class="flex items-start justify-between">
-													<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-														<!-- Category badge - shows above title on mobile, after title on desktop -->
-														<span
-															class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
-														>
-															{sessionAtTime.type.charAt(0).toUpperCase() +
-																sessionAtTime.type.slice(1)}
-														</span>
-														<h4 class="font-semibold {styles.textColor} sm:order-1">
-															{sessionAtTime.title}
-														</h4>
-													</div>
+										{#if sessionAtTime.type !== 'break'}
+											<div
+												class="relative rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} cursor-pointer p-4 shadow-sm transition-all duration-200 hover:shadow-md"
+												style="min-height: {getSessionHeight(sessionAtTime)}"
+												onclick={(e) => handleSessionClick(sessionAtTime, e)}
+												onkeydown={(e) => {
+													if (e.key === 'Enter' || e.key === ' ') {
+														e.preventDefault();
+														handleSessionClick(sessionAtTime, e);
+													}
+												}}
+												role="button"
+												tabindex="0"
+											>
+												<div class="flex flex-col gap-3">
+													<!-- Header with title and calendar button -->
+													<div class="flex items-start justify-between">
+														<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+															<!-- Category badge - shows above title on mobile, after title on desktop -->
+															<span
+																class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
+															>
+																{sessionAtTime.type.charAt(0).toUpperCase() +
+																	sessionAtTime.type.slice(1)}
+															</span>
+															<h4 class="font-semibold {styles.textColor} sm:order-1">
+																{sessionAtTime.title}
+															</h4>
+														</div>
 
-													<!-- Add to Calendar Button -->
-													{#if sessionAtTime.type !== 'break'}
+														<!-- Add to Calendar Button -->
 														<button
-															onclick={() => handleAddToCalendar(sessionAtTime)}
-															class="flex items-center gap-1 rounded-lg bg-blue-50 px-2 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none sm:px-3 sm:py-2"
+															onclick={(e) => {
+																e.stopPropagation();
+																handleAddToCalendar(sessionAtTime);
+															}}
+															class="z-10 flex items-center gap-1 rounded-lg bg-blue-50 px-2 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none sm:px-3 sm:py-2"
 															title="Add to Calendar"
 														>
 															<Calendar size={14} />
 															<span class="hidden sm:inline">Add to Calendar</span>
 														</button>
-													{/if}
-												</div>
+													</div>
 
-												<!-- Session details -->
-												<div class="space-y-2">
-													{#if sessionAtTime.speaker}
-														<p class="text-sm font-medium text-gray-700">
-															Speaker: {sessionAtTime.speaker}
-														</p>
-													{/if}
+													<!-- Session details -->
+													<div class="space-y-2">
+														{#if sessionAtTime.speaker}
+															<p class="text-sm font-medium text-gray-700">
+																Speaker: {sessionAtTime.speaker}
+															</p>
+														{/if}
 
-													{#if sessionAtTime.description}
-														<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
-													{/if}
+														{#if sessionAtTime.description}
+															<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
+														{/if}
 
-													<div
-														class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
-													>
-														<span>⏱️ {sessionAtTime.duration} min</span>
-														<span
-															>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
-																sessionAtTime.endTime
-															)}</span
+														<div
+															class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
 														>
+															<span>⏱️ {sessionAtTime.duration} min</span>
+															<span
+																>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
+																	sessionAtTime.endTime
+																)}</span
+															>
+														</div>
 													</div>
 												</div>
 											</div>
-										</div>
+										{:else}
+											<div
+												class="rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} p-4 shadow-sm transition-all duration-200"
+												style="min-height: {getSessionHeight(sessionAtTime)}"
+											>
+												<div class="flex flex-col gap-3">
+													<!-- Header with title and calendar button -->
+													<div class="flex items-start justify-between">
+														<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+															<!-- Category badge - shows above title on mobile, after title on desktop -->
+															<span
+																class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
+															>
+																{sessionAtTime.type.charAt(0).toUpperCase() +
+																	sessionAtTime.type.slice(1)}
+															</span>
+															<h4 class="font-semibold {styles.textColor} sm:order-1">
+																{sessionAtTime.title}
+															</h4>
+														</div>
+													</div>
+
+													<!-- Session details -->
+													<div class="space-y-2">
+														{#if sessionAtTime.speaker}
+															<p class="text-sm font-medium text-gray-700">
+																Speaker: {sessionAtTime.speaker}
+															</p>
+														{/if}
+
+														{#if sessionAtTime.description}
+															<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
+														{/if}
+
+														<div
+															class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
+														>
+															<span>⏱️ {sessionAtTime.duration} min</span>
+															<span
+																>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
+																	sessionAtTime.endTime
+																)}</span
+															>
+														</div>
+													</div>
+												</div>
+											</div>
+										{/if}
 									{:else}
 										<!-- Empty time slot -->
 										<div class="h-4 border-l-2 border-dashed border-gray-200"></div>
@@ -257,3 +338,152 @@
 		</div>
 	</div>
 </div>
+
+<!-- Session Details Drawer -->
+<Drawer bind:open={drawerOpen}>
+	{#if selectedSession}
+		<DrawerContent class="flex max-h-[90vh] flex-col">
+			<DrawerHeader class="flex-shrink-0">
+				<DrawerTitle class="text-2xl font-bold" style="font-family: 'Caveat', sans-serif;">
+					{selectedSession.title}
+				</DrawerTitle>
+				<DrawerDescription class="mt-2">
+					{@const styles = getSessionTypeStyles(selectedSession.type)}
+					<span class="rounded-full px-3 py-1 text-xs font-medium {styles.badgeColor}">
+						{selectedSession.type.charAt(0).toUpperCase() + selectedSession.type.slice(1)}
+					</span>
+				</DrawerDescription>
+			</DrawerHeader>
+
+			<div class="flex-1 space-y-6 overflow-y-auto px-4 pb-4">
+				<!-- Speaker Info -->
+				<div class="space-y-2">
+					<h3 class="text-lg font-semibold text-gray-900">Speaker</h3>
+					<div class="flex flex-col gap-2">
+						<p class="text-base font-medium text-gray-700">{selectedSession.speaker}</p>
+						{#if selectedSession.speakerBio}
+							<p class="text-sm leading-relaxed text-gray-600">{selectedSession.speakerBio}</p>
+						{/if}
+					</div>
+				</div>
+
+				<!-- Social Links -->
+				{#if selectedSession.speakerLinks}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">Connect</h3>
+						<div class="flex flex-wrap gap-3">
+							{#if selectedSession.speakerLinks.linkedin}
+								<a
+									href={selectedSession.speakerLinks.linkedin}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-100"
+								>
+									<Linkedin size={16} />
+									LinkedIn
+								</a>
+							{/if}
+							{#if selectedSession.speakerLinks.twitter}
+								<a
+									href={selectedSession.speakerLinks.twitter}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+								>
+									<Twitter size={16} />
+									Twitter/X
+								</a>
+							{/if}
+							{#if selectedSession.speakerLinks.website}
+								<a
+									href={selectedSession.speakerLinks.website}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+								>
+									<ExternalLink size={16} />
+									Website
+								</a>
+							{/if}
+						</div>
+					</div>
+				{/if}
+
+				<!-- Time & Duration -->
+				<div class="space-y-2">
+					<h3 class="text-lg font-semibold text-gray-900">Schedule</h3>
+					<div class="flex flex-col gap-1 text-sm text-gray-600">
+						<span>⏱️ {selectedSession.duration} minutes</span>
+						<span
+							>🕐 {formatTime(selectedSession.startTime)} - {formatTime(
+								selectedSession.endTime
+							)}</span
+						>
+					</div>
+				</div>
+
+				<!-- Abstract -->
+				{#if selectedSession.abstract}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">About This Session</h3>
+						<div class="text-sm leading-relaxed whitespace-pre-line text-gray-700">
+							{selectedSession.abstract}
+						</div>
+					</div>
+				{:else if selectedSession.description}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">About This Session</h3>
+						<p class="text-sm leading-relaxed text-gray-700">{selectedSession.description}</p>
+					</div>
+				{/if}
+
+				<!-- Slides & Resources -->
+				{#if selectedSession.slidesLink || selectedSession.resourcesLink}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">Resources</h3>
+						<div class="flex flex-col gap-2">
+							{#if selectedSession.slidesLink}
+								<a
+									href={selectedSession.slidesLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm text-blue-600 underline hover:text-blue-800"
+								>
+									<ExternalLink size={16} />
+									View Slides
+								</a>
+							{/if}
+							{#if selectedSession.resourcesLink}
+								<a
+									href={selectedSession.resourcesLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm text-blue-600 underline hover:text-blue-800"
+								>
+									<ExternalLink size={16} />
+									Additional Resources
+								</a>
+							{/if}
+						</div>
+					</div>
+				{/if}
+
+				<!-- Session Notes -->
+				{#if selectedSession.sessionNotes}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">Notes</h3>
+						<p class="text-sm leading-relaxed whitespace-pre-line text-gray-600">
+							{selectedSession.sessionNotes}
+						</p>
+					</div>
+				{/if}
+			</div>
+
+			<DrawerFooter class="flex-shrink-0 border-t">
+				<DrawerClose>
+					<Button variant="outline" class="w-full">Close</Button>
+				</DrawerClose>
+			</DrawerFooter>
+		</DrawerContent>
+	{/if}
+</Drawer>

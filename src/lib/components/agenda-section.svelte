@@ -8,7 +8,7 @@
 		description?: string;
 		speaker?: string;
 		track?: string;
-		type: 'session' | 'break' | 'keynote' | 'workshop';
+		type: 'session' | 'break' | 'keynote' | 'workshop' | 'welcome';
 	}
 
 	interface AgendaProps {
@@ -29,7 +29,7 @@
 				time: '8:30 AM',
 				title: 'Registration & Breakfast',
 				description: 'Check-in and morning refreshments',
-				type: 'break'
+				type: 'welcome'
 			},
 			{
 				time: '9:30 AM',
