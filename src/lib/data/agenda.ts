@@ -37,32 +37,53 @@ export interface Track {
 const commonSessions: Session[] = [
 	{
 		id: 'registration',
-		title: 'Registration & Welcome',
+		title: 'Registration',
 		speaker: 'GDG Chennai Team',
 		description: 'Check-in, welcome kit distribution, and networking',
-		type: 'welcome',
-		duration: 90,
+		type: 'break',
+		duration: 75,
 		startTime: '08:00',
-		endTime: '09:30'
+		endTime: '09:15'
 	},
 	{
 		id: 'keynote',
-		title: 'TBD',
-		speaker: 'TBD',
-		description: 'Welcome to DevFest Chennai 2025',
+		title: 'Welcome to Devfest 2025',
+		speaker: 'GDG Chennai Organizers',
+		description: 'Welcome & Opening Note',
 		type: 'keynote',
-		duration: 45,
-		startTime: '09:30',
-		endTime: '10:15'
+		duration: 30,
+		startTime: '09:15',
+		endTime: '09:45'
+	},
+	{
+		id: 'keynote',
+		title: 'Devfest Keynote',
+		speaker: 'Revealing soon...',
+		description: 'Interesting keynote to kick start the day',
+		type: 'keynote',
+		duration: 30,
+		startTime: '09:45',
+		endTime: '10:30'
+	},
+	{
+		id: 'keynote',
+		title: 'The Journey from Startup Stack to AI-Powered Commerce',
+		speaker: 'Abhay Kumar, Aravind Ravi',
+		description:
+			'Get ready to dive deep into the world of AI-Powered E-Commerce- Sponsor Talk (Poshmark)',
+		type: 'keynote',
+		duration: 30,
+		startTime: '10:30',
+		endTime: '11:00'
 	},
 	{
 		id: 'break-1',
-		title: 'Moving between halls and track setup',
+		title: 'Gear up for all the amazing talks',
 		speaker: '',
 		type: 'break',
 		duration: 15,
-		startTime: '10:15',
-		endTime: '10:30'
+		startTime: '11:00',
+		endTime: '11:15'
 	},
 	{
 		id: 'lunch',
@@ -71,8 +92,8 @@ const commonSessions: Session[] = [
 		description: 'Enjoy delicious food and connect with fellow developers',
 		type: 'break',
 		duration: 60,
-		startTime: '12:30',
-		endTime: '13:30'
+		startTime: '13:00',
+		endTime: '14:00'
 	},
 	{
 		id: 'closing',
@@ -90,36 +111,28 @@ const commonSessions: Session[] = [
 const track1Sessions: Session[] = [
 	...commonSessions,
 	{
-		id: 'track1-session1',
-		title: 'Gemma-licious AI: Cooking Up Smart Apps with Flutter',
-		speaker: 'Kamal Shree',
-		description:
-			"Learn how to integrate AI capabilities into Flutter applications using Google's Gemma models",
+		id: 'track1-session6',
+		title: 'Supercharging Google Cloud Deployments with Gemini CLI: From Code to Cloud in Minutes',
+		speaker: 'Jitendra Gupta',
+		description: "From Code to Cloud in Minutes using Google's Gemini CLI tools",
 		type: 'session',
 		duration: 35,
-		startTime: '10:30',
-		endTime: '11:05',
+		startTime: '11:15',
+		endTime: '11:50',
 		abstract:
-			"What happens when you mix the elegance of Flutter with the intelligence of Gemma 3? You get \"Gemma-licious AI\"—a recipe for building apps that are not just beautiful, but smart, responsive, and always available.\n\nIn this session, we'll explore how developers can integrate Gemma 3, Google's latest lightweight AI model, directly into Flutter applications to deliver intelligent, on-device experiences. From natural language understanding to context-aware features, you'll see how Gemma 3 enables apps to remain powerful even when connectivity drops.\n\nThrough live demos and practical code examples, we'll walk through:\n\n• Setting up Gemma 3 with Flutter.\n• Designing AI-driven features that enhance user productivity.\n• Leveraging on-device inference for speed, privacy, and offline capability.\n• Best practices for combining Flutter's cross-platform reach with Gemma's AI capabilities.\n\nBy the end, you'll leave with the tools (and the recipe!) to cook up your own intelligent, cross-platform apps that delight users everywhere.",
+			"Deploying applications to the cloud often involves complex CLI commands, multiple configuration steps, and switching between tools. With the arrival of Gemini CLI, developers can now simplify and accelerate this journey by combining the power of Google Cloud's services with AI-assisted workflows. In this session, we'll explore how Gemini CLI can help you seamlessly scaffold, configure, and deploy applications on Google Cloud — from Cloud Run to GKE, BigQuery, and Vertex AI. Through live demos and real-world scenarios, you'll see how AI-powered command generation, context-aware troubleshooting, and automation capabilities reduce developer toil and speed up cloud adoption. Whether you're a beginner or an advanced cloud practitioner, this talk will equip you with practical tips to make your Google Cloud deployments smarter, faster, and future-ready.",
 		speakerBio:
-			'Senior Developer Advocate @Microsoft, Google Developer Expert in Flutter & Dart with 14 years of experience in Web Technologies, Android, Flutter, HarmonyOS and Microsoft M365. I have worked for multinational firms in India, the Netherlands, and the USA. I am a Women Techmakers Ambassador!, Youtuber (whatsupcoders), Mentor @MentorCruise, and Open-Source Community Builder.',
+			'Jitendra Gupta is 13 years experienced IT professional with expertise in information security, GenAI, and cloud computing. As a sought-after speaker, with a proven track record of implementing security best practices for GenAI and cloud environments, Jitendra is dedicated to empowering fellow IT professionals with actionable takeaways to safeguard their applications, data and infrastructure on Google Cloud.',
 		speakerLinks: {
-			linkedin: 'https://www.linkedin.com/in/kamalshree/',
-			twitter: 'https://x.com/whatsupcoders',
-			website: 'https://sessionize.com/kamal-shree/'
+			linkedin: 'https://www.linkedin.com/in/jitu028',
+			twitter: 'https://x.com/jitu028',
+			website: 'https://linktr.ee/jitu028'
 		},
-		slidesLink: 'https://drive.google.com/open?id=1LaTtTx4ya2hP5uLaEONJ0ogcLGd1AcUG'
+		resourcesLink: 'https://medium.com/@jitu028',
+		sessionNotes:
+			'In the past 2-3 years I have delivered more than 75+ sessions organized by GDG, GDG Cloud and Google ML Community. Looking forward to an impactful session at Devfest Chennai - 2025.'
 	},
-	{
-		id: 'track1-buffer1',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:05',
-		endTime: '11:10'
-	},
+
 	{
 		id: 'track1-session2',
 		title: 'AI Agent (and MCP) Vulnerabilities and Security',
@@ -128,8 +141,8 @@ const track1Sessions: Session[] = [
 			'Understanding security challenges in AI agents and Model Context Protocol implementations',
 		type: 'session',
 		duration: 35,
-		startTime: '11:10',
-		endTime: '11:45',
+		startTime: '11:50',
+		endTime: '12:25',
 		abstract:
 			'While everyone discusses building AI Agents, few discuss the security risks involved.\n\nAI Agents and MCP are a security nightmare and we will deep dive into this.\n\nWe will talk about prompt injection, jailbreaking, tool poisoning, command injection, Privilege escalation and various other techniques through which hackers can easily hack your AI Agents\n\nFinally, we will discuss how to secure and scale our AI Agents.\n\nThis would be a fun session, which will also make you think.',
 		speakerBio:
@@ -143,16 +156,6 @@ const track1Sessions: Session[] = [
 			'I delivered a talk for GDG Cloud Chennai in July as well. You could take the feedback from them as well.'
 	},
 	{
-		id: 'track1-buffer2',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:45',
-		endTime: '11:50'
-	},
-	{
 		id: 'track1-session3',
 		title: 'From Queries to Clusters: Building High-Performance Node.js Backends',
 		speaker: 'Hemant Gupta',
@@ -160,8 +163,8 @@ const track1Sessions: Session[] = [
 			'Advanced techniques for scaling Node.js applications with clustering and performance optimization',
 		type: 'session',
 		duration: 35,
-		startTime: '11:50',
-		endTime: '12:25',
+		startTime: '12:25',
+		endTime: '13:00',
 		abstract:
 			"Building fast and reliable backends requires more than writing code it's about optimising both the application and the database. In this session, I'll share practical strategies for scaling Node.js applications using clustering and load balancing, while also optimising SQL queries for high-traffic systems. You'll see real-world examples, including a query reduced from 4 minutes to 4 seconds, and actionable techniques you can apply immediately. Developers will leave with tools and insights to boost performance, reliability, and scalability in production systems.",
 		speakerBio:
@@ -180,8 +183,8 @@ const track1Sessions: Session[] = [
 		description: 'Explore the intersection of Extended Reality and AI in Android development',
 		type: 'session',
 		duration: 35,
-		startTime: '13:40',
-		endTime: '14:15',
+		startTime: '14:00',
+		endTime: '14:35',
 		abstract:
 			"Discover how Android XR is redefining the future of app development by bringing immersive spatial computing and Google's GenAI-powered experiences to headsets and smart glasses. This session dives into the Android XR platform, developer-friendly tools, and migration strategies to seamlessly transition your apps into 3D space.\n\nLearn how Gemini AI integration enhances user interactions and explore the complete development cycle from prototyping with Jetpack XR to deployment. If you're ready to expand your Android skills into the next era of spatial computing, this talk is your gateway to building revolutionary XR apps.\n\n💡 Perfect For:\nProfessional Android developers ready to expand into XR, mobile architects planning spatial experiences, and technical leads evaluating Android XR for their teams. Whether you're migrating existing apps or building from scratch, you'll leave with actionable strategies and hands-on experience.\n\n🌟 Take Away\nBy the end of this session, you'll understand how to leverage Android XR's open ecosystem to create immersive experiences that were science fiction just years ago, using the Android skills you've already mastered, enhanced with AI that understands the world around your users.\n\nExperience the future of Android development. The spatial revolution starts now.",
 		speakerBio:
@@ -194,14 +197,35 @@ const track1Sessions: Session[] = [
 		resourcesLink: 'https://drive.google.com/open?id=1XpnF9-_UTJo74_vAbhVB0itiCAtTa1DI'
 	},
 	{
-		id: 'track1-buffer3',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '14:15',
-		endTime: '14:20'
+		id: 'track1-session1',
+		title: 'Gemma-licious AI: Cooking Up Smart Apps with Flutter',
+		speaker: 'Kamal Shree',
+		description:
+			"Learn how to integrate AI capabilities into Flutter applications using Google's Gemma models",
+		type: 'session',
+		duration: 35,
+		startTime: '14:35',
+		endTime: '15:10',
+		abstract:
+			"What happens when you mix the elegance of Flutter with the intelligence of Gemma 3? You get \"Gemma-licious AI\"—a recipe for building apps that are not just beautiful, but smart, responsive, and always available.\n\nIn this session, we'll explore how developers can integrate Gemma 3, Google's latest lightweight AI model, directly into Flutter applications to deliver intelligent, on-device experiences. From natural language understanding to context-aware features, you'll see how Gemma 3 enables apps to remain powerful even when connectivity drops.\n\nThrough live demos and practical code examples, we'll walk through:\n\n• Setting up Gemma 3 with Flutter.\n• Designing AI-driven features that enhance user productivity.\n• Leveraging on-device inference for speed, privacy, and offline capability.\n• Best practices for combining Flutter's cross-platform reach with Gemma's AI capabilities.\n\nBy the end, you'll leave with the tools (and the recipe!) to cook up your own intelligent, cross-platform apps that delight users everywhere.",
+		speakerBio:
+			'Senior Developer Advocate @Microsoft, Google Developer Expert in Flutter & Dart with 14 years of experience in Web Technologies, Android, Flutter, HarmonyOS and Microsoft M365. I have worked for multinational firms in India, the Netherlands, and the USA. I am a Women Techmakers Ambassador!, Youtuber (whatsupcoders), Mentor @MentorCruise, and Open-Source Community Builder.',
+		speakerLinks: {
+			linkedin: 'https://www.linkedin.com/in/kamalshree/',
+			twitter: 'https://x.com/whatsupcoders',
+			website: 'https://sessionize.com/kamal-shree/'
+		},
+		slidesLink: 'https://drive.google.com/open?id=1LaTtTx4ya2hP5uLaEONJ0ogcLGd1AcUG'
+	},
+	{
+		id: 'track1-panel1',
+		title: 'Panel 1',
+		speaker: 'TBD',
+		description: 'TBD',
+		type: 'panel',
+		duration: 40,
+		startTime: '15:10',
+		endTime: '15:45'
 	},
 	{
 		id: 'track1-session5',
@@ -211,8 +235,8 @@ const track1Sessions: Session[] = [
 			'Learn how to build lightning-fast web applications using local-first architecture patterns',
 		type: 'session',
 		duration: 35,
-		startTime: '14:20',
-		endTime: '14:55',
+		startTime: '15:45',
+		endTime: '16:20',
 		abstract:
 			"Building Local First Web Apps – Future of the Web\n\nIn this talk, we'll explore the Local-First approach to building web apps — where data lives close to the user, sync happens seamlessly in the background, and performance feels instant.\n\nWe'll cover the principles behind Local-First, real-world examples, and practical steps to implement it in your apps.",
 		speakerBio:
@@ -225,75 +249,13 @@ const track1Sessions: Session[] = [
 		resourcesLink: 'https://lofi.so/'
 	},
 	{
-		id: 'track1-buffer4',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '14:55',
-		endTime: '15:00'
-	},
-	{
-		id: 'track1-panel1',
-		title: 'Panel 1',
-		speaker: 'TBD',
-		description: 'TBD',
-		type: 'panel',
-		duration: 40,
-		startTime: '15:00',
-		endTime: '15:40'
-	},
-	{
-		id: 'track1-buffer5',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '15:40',
-		endTime: '15:45'
-	},
-	{
-		id: 'track1-session6',
-		title: 'Supercharging Google Cloud Deployments with Gemini CLI: From Code to Cloud in Minutes',
-		speaker: 'Jitendra Gupta',
-		description: "From Code to Cloud in Minutes using Google's Gemini CLI tools",
-		type: 'session',
-		duration: 35,
-		startTime: '15:45',
-		endTime: '16:20',
-		abstract:
-			"Deploying applications to the cloud often involves complex CLI commands, multiple configuration steps, and switching between tools. With the arrival of Gemini CLI, developers can now simplify and accelerate this journey by combining the power of Google Cloud's services with AI-assisted workflows. In this session, we'll explore how Gemini CLI can help you seamlessly scaffold, configure, and deploy applications on Google Cloud — from Cloud Run to GKE, BigQuery, and Vertex AI. Through live demos and real-world scenarios, you'll see how AI-powered command generation, context-aware troubleshooting, and automation capabilities reduce developer toil and speed up cloud adoption. Whether you're a beginner or an advanced cloud practitioner, this talk will equip you with practical tips to make your Google Cloud deployments smarter, faster, and future-ready.",
-		speakerBio:
-			'Jitendra Gupta is 13 years experienced IT professional with expertise in information security, GenAI, and cloud computing. As a sought-after speaker, with a proven track record of implementing security best practices for GenAI and cloud environments, Jitendra is dedicated to empowering fellow IT professionals with actionable takeaways to safeguard their applications, data and infrastructure on Google Cloud.',
-		speakerLinks: {
-			linkedin: 'https://www.linkedin.com/in/jitu028',
-			twitter: 'https://x.com/jitu028',
-			website: 'https://linktr.ee/jitu028'
-		},
-		resourcesLink: 'https://medium.com/@jitu028',
-		sessionNotes:
-			'In the past 2-3 years I have delivered more than 75+ sessions organized by GDG, GDG Cloud and Google ML Community. Looking forward to an impactful session at Devfest Chennai - 2025.'
-	},
-	{
-		id: 'track1-buffer6',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '16:20',
-		endTime: '16:25'
-	},
-	{
 		id: 'track1-panel2',
 		title: 'Panel 2',
 		speaker: 'TBD',
 		description: 'TBD',
 		type: 'panel',
 		duration: 35,
-		startTime: '16:25',
+		startTime: '16:20',
 		endTime: '17:00'
 	}
 ];
@@ -308,9 +270,9 @@ const track2Sessions: Session[] = [
 		description:
 			"Introduction to Model Context Protocol for database operations in Google's AI Development Kit",
 		type: 'session',
-		duration: 60,
-		startTime: '10:30',
-		endTime: '11:30',
+		duration: 35,
+		startTime: '11:15',
+		endTime: '11:50',
 		abstract:
 			"Curious how to make your AI agents smarter with real-time data access? In this hands-on session, you'll learn how to integrate databases into your agent workflows using the MCP Toolbox and Google's Agent Development Kit (ADK).",
 		speakerBio: 'I write and create on the internet. Google Developer Expert for Google Workspace.',
@@ -322,16 +284,6 @@ const track2Sessions: Session[] = [
 		resourcesLink: 'https://www.aryanirani123.com/#h.d8bz98k4pdlv'
 	},
 	{
-		id: 'track2-buffer1',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:30',
-		endTime: '11:35'
-	},
-	{
 		id: 'track2-session2',
 		title:
 			"From Cloud to Pocket: Refining Stories with Google's Gemini API and Gemma On-Device Model",
@@ -339,9 +291,9 @@ const track2Sessions: Session[] = [
 		description:
 			'Building mobile applications that leverage both cloud and on-device AI capabilities',
 		type: 'session',
-		duration: 20,
-		startTime: '11:35',
-		endTime: '11:55',
+		duration: 35,
+		startTime: '11:50',
+		endTime: '12:25',
 		abstract:
 			"Context and Background\nGenerative AI has opened up new creative possibilities, but most applications rely on cloud-based models, which can introduce latency, privacy, and cost challenges. In this session, we explore how to shift from server-side story generation to efficient on-device personalization. By using Google's Gemini API and Gemma models, we demonstrate a hybrid approach that maintains quality while optimizing for responsiveness, adaptability, and user control.\n\nAbstract:\nJoin us as we journey from the cloud to your pocket, using Google's Gemini API and Gemma on-device model to refine story generation. We'll start with cloud-based story creation and then shift to running models directly on-device, showcasing how to enhance outputs with tuning techniques. By the end, you'll see how to measure and compare the results of each stage.\n\nWhat the Session Covers:\nThis session dives deep into the practical use of language models for story generation, moving from a Gemini model to on-device Gemma models and refining them for richer output. We'll explore the transition to on-device models that can be progressively tuned.\n\n• Starting with a Gemini API to generate initial stories.\n• Transitioning to on-device models for offline and personalized story generation.\n• Demonstrating three stages of on-device model use: the base model, a prompt-tuned version, and a fine-tuned version using adapter tuning.\n• Evaluation methods to compare and measure the improvements in story quality across these different models.\n\nSession Highlights:\n• Practical steps for moving from API-based generation to on-device models.\n• A detailed look at how prompt tuning and fine-tuning can enhance on-device model outputs.\n• Simple evaluation metrics to assess the quality of generated stories.\n\nKey Takeaways:\nAttendees will gain insight into how to evolve from cloud-based to on-device models, how to refine model outputs through tuning, and how to evaluate the improvements effectively.",
 		speakerBio:
@@ -352,24 +304,14 @@ const track2Sessions: Session[] = [
 		resourcesLink: 'https://drive.google.com/open?id=13gZ5L2rvJRvCFGPg4lDOT0poclJFbDvf'
 	},
 	{
-		id: 'track2-buffer2',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:55',
-		endTime: '12:00'
-	},
-	{
 		id: 'track2-session3',
 		title: 'Beyond Code Sharing: Building Smarter Mobile Apps with KMP and Agents (Koog)',
 		speaker: 'Rivu Chakraborty',
 		description: 'Advanced Kotlin Multiplatform development with AI agent integration',
 		type: 'session',
-		duration: 20,
-		startTime: '12:00',
-		endTime: '12:20',
+		duration: 35,
+		startTime: '12:25',
+		endTime: '13:00',
 		abstract:
 			"For years we've talked about code sharing with Kotlin Multiplatform (KMP). This talk explores the next frontier: integrating AI agents directly into your KMP architecture to create intelligent, context-aware mobile applications.\n\nI'll start by explaining KMP and Koog, then I'll demonstrate usages and power of Koog by building a document management app that evolves from a simple KMP baseline to an AI-powered assistant—all from a single codebase serving Android, iOS, and backend.\n\nThe Journey:\nAct 1: The Foundation\n• Building a document scanner app with shared business logic across platforms\n• Implementing OCR, storage (SQLDelight), and sync (Ktor) in common modules\n• Structuring your KMP project for future agent integration\nAct 2: Intelligence Layer with Koog\n• What is Koog and how it simplifies AI agent integration in Kotlin\n• Adding an agent that auto-classifies documents and extracts key fields\n• Enabling natural language queries: \"show my last electricity bill\"\n• Building proactive features: automatic reminders for document renewals\nAct 3: Architectural Patterns\n• Clean separation between business logic, and agent capabilities.\n• How agent integration in KMP actually simplifies your architecture\n• Practical patterns for handling agent responses across platforms\n• Testing strategies for agent-enhanced features\nAct 4: Production Reality\n• Battle-tested patterns from scaling KMP at unicorn startups\n• Why agent integration in KMP actually reduces complexity (counterintuitive but true)\nKey Takeaways:\n• Complete architectural blueprint with code samples and diagrams\n• Step-by-step guide to adding Koog to existing KMP projects\n• Common patterns for agent-UI interaction in multiplatform apps\n• Real examples you can adapt for your own use cases\n\nThis isn't about AI hype—it's about pragmatically extending your Kotlin skills to build the next generation of mobile apps. You'll leave with actionable insights and real code you can apply immediately.",
 		speakerBio:
@@ -387,9 +329,9 @@ const track2Sessions: Session[] = [
 		speaker: 'Sairam Sundaresan',
 		description: 'Quick overview of the latest developments in vision-language model capabilities',
 		type: 'session',
-		duration: 60,
-		startTime: '13:50',
-		endTime: '14:50',
+		duration: 35,
+		startTime: '14:00',
+		endTime: '14:35',
 		abstract:
 			'Vision Language Models are rapidly changing how AI connects sight and language, allowing systems to describe, reason, and interact with the world in richer ways. Google has been at the center of this shift, showing how scaling, data, and architecture choices can merge perception and reasoning into a single model. This talk gives developers a fast, clear tour of the core ideas behind these systems, what they make possible today, and where they are heading. You will leave with a sharper understanding of the breakthroughs driving the field and how to apply them to real problems.',
 		speakerBio:
@@ -409,8 +351,8 @@ const track2Sessions: Session[] = [
 			"Deep dive into Flutter's BuildContext and its role in widget lifecycle management",
 		type: 'session',
 		duration: 35,
-		startTime: '14:20',
-		endTime: '14:55',
+		startTime: '14:35',
+		endTime: '15:10',
 		abstract:
 			"BuildContext is at the heart of Flutter's widget tree, yet its true potential often goes untapped. In this talk, we'll find out what BuildContext really represents, how it connects widgets to their position in the tree, and the powerful capabilities it unlocks.\n\nYou'll learn how to access ancestors and inherited widgets, navigate safely, avoid common pitfalls, and optimize performance. We'll also explore advanced tricks — including using context to measure a widget's dimensions and dynamically size another widget — giving you the tools to write cleaner, more adaptable Flutter UIs.",
 		speakerBio:
@@ -423,25 +365,15 @@ const track2Sessions: Session[] = [
 		slidesLink: 'https://drive.google.com/open?id=1auk5mnXqcpB4yZfB4qHmP9nN0WLLFjDK'
 	},
 	{
-		id: 'track2-buffer3',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '14:55',
-		endTime: '15:00'
-	},
-	{
 		id: 'track2-session6',
 		title: 'Memory in Agentic AI',
 		speaker: 'Vipin Kumar Agrahari',
 		description:
 			'Understanding how AI agents maintain and utilize memory for better decision making',
 		type: 'session',
-		duration: 20,
-		startTime: '15:00',
-		endTime: '15:20',
+		duration: 35,
+		startTime: '15:10',
+		endTime: '15:45',
 		abstract:
 			'Memory is what turns AI from a one-off assistant into an adaptive, long-term collaborator. In agentic AI applications, memory enables systems to learn from past interactions, adapt to new contexts, and plan strategically—much like humans do. This talk explores how different types of memory (short-term, long-term, and procedural) are shaping the next generation of AI agents, the challenges of scaling and managing memory, and the opportunities it unlocks for creating more reliable, personalized, and context-aware AI.',
 		speakerBio:
@@ -455,25 +387,15 @@ const track2Sessions: Session[] = [
 			'https://www.canva.com/design/DAGye_boC38/YsfY4t2Z8RqI7Hw311wfJw/edit?utm_content=DAGye_boC38&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
 	},
 	{
-		id: 'track2-buffer4',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '15:20',
-		endTime: '15:25'
-	},
-	{
 		id: 'track2-session7',
 		title: 'Rethinking AI UX',
 		speaker: 'Sanju Sivalingam',
 		description:
 			'Design principles and best practices for creating intuitive AI-powered user experiences',
 		type: 'session',
-		duration: 20,
-		startTime: '15:25',
-		endTime: '15:45',
+		duration: 35,
+		startTime: '15:45',
+		endTime: '16:20',
 		abstract:
 			"this is a talk about missing pieces in ai experiences. i'll show why chat-first ai interface is too limited/fails and what to do instead. think autopilot vs copilot, summarize then decide, watch then trigger. you'll see how these cut steps from 8 to 2 and save up to 60% time.",
 		speakerBio:
@@ -494,7 +416,7 @@ const track2Sessions: Session[] = [
 		description: 'Complete agent development lifecycle using Google ADK',
 		type: 'session',
 		duration: 35,
-		startTime: '16:25',
+		startTime: '16:20',
 		endTime: '17:00',
 		abstract:
 			"Craft production-ready, self-evolving AI agents by mastering the end-to-end development lifecycle with Google's Agent Development Kit (ADK). This overview covers designing capabilities, integrating robust CI/CD pipelines for automated testing and deployment, and implementing data-driven feedback loops that allow the agent to learn and improve autonomously. Move beyond simple conversational design to build a scalable, intelligent system that continuously refines its performance and operates reliably in a live environment.",
@@ -520,8 +442,8 @@ const track3Sessions: Session[] = [
 			'Hands-on workshop on deploying Model Context Protocol servers securely on Google Cloud Run',
 		type: 'workshop',
 		duration: 60,
-		startTime: '10:30',
-		endTime: '11:30',
+		startTime: '11:15',
+		endTime: '12:15',
 		abstract:
 			'In this workshop, we will build and deploy a Model Context Protocol server in serverless container with Cloud Run. MCP servers are useful for providing LLMs access with external tools and services. We will configure it secure and production ready that can be accessible by multiple clients.',
 		speakerBio: 'Member Technical Staff at Zoho',
@@ -535,16 +457,6 @@ const track3Sessions: Session[] = [
 		sessionNotes: 'This is a official Google codelab'
 	},
 	{
-		id: 'track3-buffer1',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:30',
-		endTime: '11:35'
-	},
-	{
 		id: 'track3-lightning1',
 		title:
 			'Lightning talk: Solutions Mindset: Exploring new technologies from Developer to Solutionist: Reclaiming Purpose in the Age of AI',
@@ -553,8 +465,8 @@ const track3Sessions: Session[] = [
 			"Reclaiming Purpose in the Age of AI - A developer's journey to becoming a solution architect",
 		type: 'lightning',
 		duration: 20,
-		startTime: '11:35',
-		endTime: '11:55',
+		startTime: '12:15',
+		endTime: '12:35',
 		abstract:
 			"In this talk, we explore why the label 'developer' is no longer enough. We'll explore how adopting the Solutionist mindset can empower you to solve real-world problems with agility, empathy, and creativity, especially in the age of AI.\n\nThis talk challenges the traditional \"developer\" label and introduces the Solutionist mindset: a way of thinking that goes beyond coding to solving real-world problems with empathy, creativity, and systems thinking. It emphasizes how AI can act as a collaborator, not a competitor, and shares personal stories of building small but impactful projects (like budget trackers, bookmarking tools, and task managers) to highlight practical lessons learnt, building, exploring, hosting and using different services etc.\n\nAttendees will leave inspired to look beyond frameworks and tech stacks, and instead approach problems with a broader, solution-driven perspective that's especially relevant in today's AI-driven era.",
 		speakerBio: 'Android Developer/MTS at Zoho Corp',
@@ -567,24 +479,14 @@ const track3Sessions: Session[] = [
 		resourcesLink: 'https://md.eknath.dev/posts/software-development/solutionist/'
 	},
 	{
-		id: 'track3-buffer2',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '11:55',
-		endTime: '12:00'
-	},
-	{
 		id: 'track3-lightning2',
 		title: 'Lightning talk: Checks and Privacy Sandbox - An Interesting Duo',
 		speaker: 'Vijayabharathi Karuppasamy',
 		description: 'Understanding the relationship between privacy checks and sandbox environments',
 		type: 'lightning',
 		duration: 20,
-		startTime: '12:00',
-		endTime: '12:20',
+		startTime: '12:35',
+		endTime: '13:00',
 		abstract:
 			"The Privacy Sandbox is an initiative from Google aims to create technologies that both protect people's privacy online and give companies and developers tools to build thriving digital businesses. This provides alternative solutions for browsing without third-party cookies and reduce cross-site and cross-app tracking while helping to keep online content. Checks is used for Automated compliance analysis and E2E monitoring.",
 		speakerBio:
@@ -604,8 +506,8 @@ const track3Sessions: Session[] = [
 			"Workshop on implementing security best practices using Google's AI Development Kit and Application-to-Application authentication",
 		type: 'workshop',
 		duration: 60,
-		startTime: '13:50',
-		endTime: '14:50',
+		startTime: '14:00',
+		endTime: '15:00',
 		abstract:
 			"I'm building lightweight agents that run automated security scans across code, dependencies, and infra — and I'll show you how to do the same, safely. In this 45-minute session we'll use the Agent Development Kit (ADK) and Agent-to-Agent (A2A) patterns to design scanning agents that are secure, auditable, and CI/CD-friendly. You'll get practical guidance on agent identity and least-privilege authorization, encrypted A2A messaging, safe delegation of scanning tasks, and tamper-evident reporting. Live demos will cover integrating agents into pipelines, handling false positives, and building an audit trail so scans are both automated and trustworthy. Walk away with patterns and code-level ideas to deploy security-scanning agents without expanding your attack surface.",
 		speakerBio: 'AI Engineer at IBM',
@@ -616,48 +518,23 @@ const track3Sessions: Session[] = [
 		slidesLink: 'https://drive.google.com/open?id=14ga_ImHixGItr-0M6ACPoIkYdvXDvlVi'
 	},
 	{
-		id: 'track3-buffer3',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '14:50',
-		endTime: '14:55'
-	},
-	{
-		id: 'track3-lightning3',
-		title:
-			'Lightning Talk: Building NanoAgents: Create and Deploy Custom Agentic Framework similar to Langchain and Langgraph and submit to PyPi',
-		speaker: 'Navuluri Balaji',
+		id: 'track-new-lightning3',
+		title: 'There has never been a better time to build',
+		speaker: 'Abinash Muralidharan',
 		description:
-			'Create and Deploy Custom Agentic Framework similar to Langchain and Langgraph and submit to PyPi',
+			"This talk explores today's unprecedented opportunities for builders and makers. We'll discuss the explosion of AI tools, open-source technologies, and global communities that empower anyone to launch projects faster and bigger than ever before. ",
 		type: 'lightning',
 		duration: 20,
 		startTime: '15:00',
-		endTime: '15:20',
+		endTime: '15:25',
 		abstract:
-			'Designing NanoAgents that are easy to build and extend\nPackaging and publishing them to PyPI, making them instantly available to the global developer ecosystem\nDemonstrating real-world use cases where NanoAgents can accelerate innovation.\n\nBy the end of the session, attendees will be equipped to not only create their own NanoAgents but also contribute to a growing ecosystem of reusable AI components.\n\nA nano, minimalistic, and lightweight library for building ReACT-based AI agents that use tools to solve tasks.',
+			"In an era defined by rapid technological innovation, there truly has never been a better time to build. This talk will inspire developers and creators to seize today's unique opportunities—highlighting how advancements in AI, democratized open-source tools, and the rise of worldwide developer communities are lowering barriers and accelerating innovation. Attendees will learn how they can leverage this ecosystem to start projects with greater speed and ambition than ever before, regardless of their background or resources. Join us to discover practical strategies, mindsets, and resources for turning your ideas into impactful, real-world solutions in the modern builder's landscape.",
 		speakerBio: 'Associate Software Developer at AVK Tech Solutions',
 		speakerLinks: {
-			linkedin: 'http://www.linkedin.com/in/navuluri-balaji',
-			twitter: 'https://x.com/navuluribalaji?s=21',
-			website: 'https://linktr.ee/BalajiNavuluri'
-		},
-		slidesLink: 'https://drive.google.com/open?id=1XIXoqDhZ_xHDvsj13Ns7Pr9gwDvFbKaE',
-		resourcesLink: 'https://pypi.org/project/nbagents/',
-		sessionNotes: 'https://github.com/NavuluriBalaji/NKit'
+			linkedin: 'https://www.linkedin.com/in/abinash-m-m/'
+		}
 	},
-	{
-		id: 'track3-buffer4',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '15:20',
-		endTime: '15:25'
-	},
+
 	{
 		id: 'track3-lightning4',
 		title:
@@ -683,16 +560,6 @@ const track3Sessions: Session[] = [
 		sessionNotes: 'https://sessionize.com/sahithyaba'
 	},
 	{
-		id: 'track3-buffer5',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
-		startTime: '15:45',
-		endTime: '15:50'
-	},
-	{
 		id: 'track3-lightning5',
 		title:
 			'Lightning Talk: Orchestrating Synthetic Minds: Cognitive Architectures in the Age of LLMs',
@@ -701,7 +568,7 @@ const track3Sessions: Session[] = [
 			'Exploring cognitive architectures and their implementation in large language model systems',
 		type: 'lightning',
 		duration: 20,
-		startTime: '15:50',
+		startTime: '15:45',
 		endTime: '16:10',
 		abstract:
 			"As organizations embrace AI agents, a pressing question emerges: How can we design systems that reliably think, remember, and act over time? While Large Language Models (LLMs) excel at language generation, they lack the cognitive structures required for sustained reasoning and adaptive behavior. Cognitive architectures for LLM agents aim to fill this gap, offering blueprints that integrate memory, planning, reflection, and decision-making—drawing inspiration from decades of human-centered cognitive research.\n\nThis talk will introduce the core components of such architectures, including multi-level memory systems, reasoning and planning modules, reflection loops for self-correction, and action layers for tool use and real-world interaction. Building on recent advances such as CoALA, ReflAct, and the Task Memory Engine, we will explore how these designs are transforming LLMs into more capable and reliable agents.\n\nWe will also highlight emerging design patterns—from ReAct's integration of reasoning and acting, to Reflexion's self-critique, to PreAct's predictive planning—while addressing the open challenges of scaling context and memory, mitigating hallucinations, defining evaluation benchmarks, and ensuring ethical, safe deployment.\n\nBy weaving together insights from cognitive science and the latest LLM research, this session paints a vision of synthetic cognition: a future where AI agents evolve from reactive tools into adaptive collaborators—capable of learning, reflecting, and co-creating alongside humans.",
@@ -715,24 +582,37 @@ const track3Sessions: Session[] = [
 			'https://arxiv.org/html/2309.02427v3\nhttps://www.youtube.com/watch?v=Qj7jPTQa2f4\nhttps://www.cognee.ai/blog/fundamentals/cognitive-architectures-for-language-agents-explained'
 	},
 	{
-		id: 'track3-buffer6',
-		title: 'Break',
-		speaker: '',
-		description: '',
-		type: 'break',
-		duration: 5,
+		id: 'track3-lightning3',
+		title:
+			'Lightning Talk: Building NanoAgents: Create and Deploy Custom Agentic Framework similar to Langchain and Langgraph and submit to PyPi',
+		speaker: 'Navuluri Balaji',
+		description:
+			'Create and Deploy Custom Agentic Framework similar to Langchain and Langgraph and submit to PyPi',
+		type: 'lightning',
+		duration: 20,
 		startTime: '16:10',
-		endTime: '16:15'
+		endTime: '16:35',
+		abstract:
+			'Designing NanoAgents that are easy to build and extend\nPackaging and publishing them to PyPI, making them instantly available to the global developer ecosystem\nDemonstrating real-world use cases where NanoAgents can accelerate innovation.\n\nBy the end of the session, attendees will be equipped to not only create their own NanoAgents but also contribute to a growing ecosystem of reusable AI components.\n\nA nano, minimalistic, and lightweight library for building ReACT-based AI agents that use tools to solve tasks.',
+		speakerBio: 'Associate Software Developer at AVK Tech Solutions',
+		speakerLinks: {
+			linkedin: 'http://www.linkedin.com/in/navuluri-balaji',
+			twitter: 'https://x.com/navuluribalaji?s=21',
+			website: 'https://linktr.ee/BalajiNavuluri'
+		},
+		slidesLink: 'https://drive.google.com/open?id=1XIXoqDhZ_xHDvsj13Ns7Pr9gwDvFbKaE',
+		resourcesLink: 'https://pypi.org/project/nbagents/',
+		sessionNotes: 'https://github.com/NavuluriBalaji/NKit'
 	},
 	{
-		id: 'track3-panel',
-		title: 'Panel: Know your community',
-		speaker: 'Panel Moderator',
-		description: 'Community discussion and networking session',
-		type: 'panel',
-		duration: 20,
-		startTime: '16:15',
-		endTime: '16:35'
+		id: 'networking-track3',
+		title: 'Networking',
+		speaker: 'GDG Chennai Team',
+		description: 'Networking',
+		type: 'break',
+		duration: 30,
+		startTime: '16:35',
+		endTime: '17:00'
 	}
 ];
 

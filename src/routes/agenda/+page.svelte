@@ -155,40 +155,40 @@
 						<h3 class="text-2xl font-bold text-gray-900" style="font-family: 'Caveat', sans-serif;">
 							{currentTrack.name}
 						</h3>
-						<p class="text-gray-600">{currentTrack.description}</p>
 					</div>
 
 					<!-- Timeline Grid -->
 					<div class="space-y-4">
-						{#each currentTrack.timeSlots as timeSlot (timeSlot.time)}
+						{#each currentTrack.timeSlots as timeSlot, index (timeSlot.time)}
 							{@const sessionAtTime = getSessionAtTime(timeSlot.time)}
-							<div class="flex items-start gap-4 sm:gap-6">
-								<!-- Time Column -->
-								<div class="w-16 flex-shrink-0 pt-2 text-left sm:w-24 sm:text-right">
-									<div class="text-xs font-medium text-gray-900 sm:text-sm">{timeSlot.label}</div>
-								</div>
+							{@const isLast = index === currentTrack.timeSlots.length - 1}
+							{#if !(isLast && !sessionAtTime)}
+								<div class="flex items-start gap-4 sm:gap-6">
+									<!-- Time Column -->
+									<div class="w-16 flex-shrink-0 pt-2 text-left sm:w-24 sm:text-right">
+										<div class="text-xs font-medium text-gray-900 sm:text-sm">{timeSlot.label}</div>
+									</div>
 
-								<!-- Session Column -->
-								<div class="flex-1">
-									{#if sessionAtTime}
-										{@const styles = getSessionTypeStyles(sessionAtTime.type)}
-										{#if sessionAtTime.type !== 'break'}
-											<div
-												class="relative rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} cursor-pointer p-4 shadow-sm transition-all duration-200 hover:shadow-md"
-												style="min-height: {getSessionHeight(sessionAtTime)}"
-												onclick={(e) => handleSessionClick(sessionAtTime, e)}
-												onkeydown={(e) => {
-													if (e.key === 'Enter' || e.key === ' ') {
-														e.preventDefault();
-														handleSessionClick(sessionAtTime, e);
-													}
-												}}
-												role="button"
-												tabindex="0"
-											>
-												<div class="flex flex-col gap-3">
-													<!-- Header with title and calendar button -->
-													<div class="flex items-start justify-between">
+									<!-- Session Column -->
+									<div class="flex-1">
+										{#if sessionAtTime}
+											{@const styles = getSessionTypeStyles(sessionAtTime.type)}
+											{#if sessionAtTime.type !== 'break'}
+												<div
+													class="relative rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} cursor-pointer p-4 shadow-sm transition-all duration-200 hover:shadow-md"
+													style="min-height: {getSessionHeight(sessionAtTime)}"
+													onclick={(e) => handleSessionClick(sessionAtTime, e)}
+													onkeydown={(e) => {
+														if (e.key === 'Enter' || e.key === ' ') {
+															e.preventDefault();
+															handleSessionClick(sessionAtTime, e);
+														}
+													}}
+													role="button"
+													tabindex="0"
+												>
+													<div class="flex flex-col gap-3">
+														<!-- Header with title -->
 														<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
 															<!-- Category badge - shows above title on mobile, after title on desktop -->
 															<span
@@ -202,99 +202,99 @@
 															</h4>
 														</div>
 
-														<!-- Add to Calendar Button -->
-														<button
-															onclick={(e) => {
-																e.stopPropagation();
-																handleAddToCalendar(sessionAtTime);
-															}}
-															class="z-10 flex items-center gap-1 rounded-lg bg-blue-50 px-2 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none sm:px-3 sm:py-2"
-															title="Add to Calendar"
-														>
-															<Calendar size={14} />
-															<span class="hidden sm:inline">Add to Calendar</span>
-														</button>
-													</div>
+														<!-- Session details -->
+														<div class="space-y-2">
+															{#if sessionAtTime.speaker}
+																<p class="text-sm font-medium text-gray-700">
+																	Speaker: {sessionAtTime.speaker}
+																</p>
+															{/if}
 
-													<!-- Session details -->
-													<div class="space-y-2">
-														{#if sessionAtTime.speaker}
-															<p class="text-sm font-medium text-gray-700">
-																Speaker: {sessionAtTime.speaker}
-															</p>
-														{/if}
+															{#if sessionAtTime.description}
+																<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
+															{/if}
 
-														{#if sessionAtTime.description}
-															<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
-														{/if}
-
-														<div
-															class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
-														>
-															<span>⏱️ {sessionAtTime.duration} min</span>
-															<span
-																>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
-																	sessionAtTime.endTime
-																)}</span
+															<div
+																class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
 															>
+																<span>⏱️ {sessionAtTime.duration} min</span>
+																<span
+																	>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
+																		sessionAtTime.endTime
+																	)}</span
+																>
+															</div>
+
+															<!-- Add to Calendar Button -->
+															<button
+																onclick={(e) => {
+																	e.stopPropagation();
+																	handleAddToCalendar(sessionAtTime);
+																}}
+																class="z-10 flex items-center gap-1 rounded-lg bg-blue-50 px-2 py-1.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-100 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none sm:px-3 sm:py-2"
+																title="Add to Calendar"
+															>
+																<Calendar size={14} />
+																<span class="hidden sm:inline">Add to Calendar</span>
+															</button>
 														</div>
 													</div>
 												</div>
-											</div>
+											{:else}
+												<div
+													class="rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} p-4 shadow-sm transition-all duration-200"
+													style="min-height: {getSessionHeight(sessionAtTime)}"
+												>
+													<div class="flex flex-col gap-3">
+														<!-- Header with title and calendar button -->
+														<div class="flex items-start justify-between">
+															<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+																<!-- Category badge - shows above title on mobile, after title on desktop -->
+																<span
+																	class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
+																>
+																	{sessionAtTime.type.charAt(0).toUpperCase() +
+																		sessionAtTime.type.slice(1)}
+																</span>
+																<h4 class="font-semibold {styles.textColor} sm:order-1">
+																	{sessionAtTime.title}
+																</h4>
+															</div>
+														</div>
+
+														<!-- Session details -->
+														<div class="space-y-2">
+															{#if sessionAtTime.speaker}
+																<p class="text-sm font-medium text-gray-700">
+																	Speaker: {sessionAtTime.speaker}
+																</p>
+															{/if}
+
+															{#if sessionAtTime.description}
+																<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
+															{/if}
+
+															<div
+																class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
+															>
+																<span>⏱️ {sessionAtTime.duration} min</span>
+																<span
+																	>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
+																		sessionAtTime.endTime
+																	)}</span
+																>
+															</div>
+														</div>
+													</div>
+												</div>
+											{/if}
 										{:else}
-											<div
-												class="rounded-lg border-l-4 {styles.borderColor} {styles.bgColor} p-4 shadow-sm transition-all duration-200"
-												style="min-height: {getSessionHeight(sessionAtTime)}"
-											>
-												<div class="flex flex-col gap-3">
-													<!-- Header with title and calendar button -->
-													<div class="flex items-start justify-between">
-														<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-															<!-- Category badge - shows above title on mobile, after title on desktop -->
-															<span
-																class="w-fit rounded-full px-2 py-1 text-xs font-medium {styles.badgeColor} sm:order-2"
-															>
-																{sessionAtTime.type.charAt(0).toUpperCase() +
-																	sessionAtTime.type.slice(1)}
-															</span>
-															<h4 class="font-semibold {styles.textColor} sm:order-1">
-																{sessionAtTime.title}
-															</h4>
-														</div>
-													</div>
-
-													<!-- Session details -->
-													<div class="space-y-2">
-														{#if sessionAtTime.speaker}
-															<p class="text-sm font-medium text-gray-700">
-																Speaker: {sessionAtTime.speaker}
-															</p>
-														{/if}
-
-														{#if sessionAtTime.description}
-															<p class="text-sm text-gray-600">{sessionAtTime.description}</p>
-														{/if}
-
-														<div
-															class="flex flex-col gap-1 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4"
-														>
-															<span>⏱️ {sessionAtTime.duration} min</span>
-															<span
-																>🕐 {formatTime(sessionAtTime.startTime)} - {formatTime(
-																	sessionAtTime.endTime
-																)}</span
-															>
-														</div>
-													</div>
-												</div>
-											</div>
+											<!-- Empty time slot -->
+											<div class="h-4 border-l-2 border-dashed border-gray-200"></div>
 										{/if}
-									{:else}
-										<!-- Empty time slot -->
-										<div class="h-4 border-l-2 border-dashed border-gray-200"></div>
-									{/if}
+									</div>
 								</div>
-							</div>
+							{/if}
 						{/each}
 					</div>
 				</div>
@@ -469,14 +469,14 @@
 				{/if}
 
 				<!-- Session Notes -->
-				{#if selectedSession.sessionNotes}
+				<!-- {#if selectedSession.sessionNotes}
 					<div class="space-y-2">
 						<h3 class="text-lg font-semibold text-gray-900">Notes</h3>
 						<p class="text-sm leading-relaxed whitespace-pre-line text-gray-600">
 							{selectedSession.sessionNotes}
 						</p>
 					</div>
-				{/if}
+				{/if} -->
 			</div>
 
 			<DrawerFooter class="flex-shrink-0 border-t">
