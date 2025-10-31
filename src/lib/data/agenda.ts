@@ -257,7 +257,7 @@ const track1Sessions: Session[] = [
 			{ name: 'Manivarna', linkedin: 'https://www.linkedin.com/in/mdirisina/' },
 			{ name: 'Pragadeesh', linkedin: 'https://www.linkedin.com/in/pragadeesh-kannan/' }
 		],
-		description: `Building products has never been easier or riskier. From overconfident algorithms to features that “worked in staging,” today’s product world lives on the fine line between breakthrough and breakdown. This panel brings together product leaders, designers, and technologists to talk about the beautiful chaos of innovation — the decisions we get right, the experiments that fail spectacularly, and the lessons that only come from shipping fast and fixing faster. Join us as we unpack what happens when bold ideas meet real-world users, how to build resilience into the product process, and why a little bit of “wrong” often leads to the most interesting things. Because in the end, if nothing ever goes wrong… you’re probably not building anything new.`,
+		description: `Building products has never been easier or riskier. This panel brings together product leaders, designers, and technologists to unpack the chaos of innovation—from breakthrough ideas to epic failures, and why a little "wrong" often leads to the most interesting things.`,
 		type: 'panel',
 		duration: 40,
 		startTime: '15:10',
@@ -287,11 +287,8 @@ const track1Sessions: Session[] = [
 	{
 		id: 'track1-panel2',
 		title: 'Staring Into the Void Until It Makes Sense',
-		speaker: 'TBD',
-		description: `AI sometimes feels like magic, until you’re the one debugging it at 2 a.m., wondering why your model thinks a banana is a bulldozer. This panel dives into the messy, fascinating, and often hilarious reality of building and scaling AI systems in the enterprise.
-Join our amazing panel as they unpack what really happens behind the buzzwords. From model hallucinations and prompt engineering hacks to enterprise adoption headaches, we’ll explore how today’s AI teams are turning chaos into clarity - one log file, one prompt, and one GPU crash at a time.
-Expect sharp insights, real stories, and a few “I can’t believe this worked” moments as we stare into the AI void… until it finally makes sense.
-`,
+		speaker: '',
+		description: `What really happens when AI meets enterprise deadlines? Our panel shares real stories, lessons, and laughs from turning AI chaos into clarity—one log, one prompt, and one crash at a time.`,
 		type: 'panel',
 		duration: 35,
 		panelists: ['Kayalvizhi Karthikeyan', 'Janet Rajan', 'Mary Helena Rose A', 'Prashant'],
