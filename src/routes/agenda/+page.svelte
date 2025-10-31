@@ -357,18 +357,38 @@
 
 			<div class="flex-1 space-y-6 overflow-y-auto px-4 pb-4">
 				<!-- Speaker Info -->
-				<div class="space-y-2">
-					<h3 class="text-lg font-semibold text-gray-900">Speaker</h3>
-					<div class="flex flex-col gap-2">
-						<p class="text-base font-medium text-gray-700">{selectedSession.speaker}</p>
-						{#if selectedSession.speakerBio}
-							<p class="text-sm leading-relaxed text-gray-600">{selectedSession.speakerBio}</p>
-						{/if}
+				{#if selectedSession.type !== 'panel'}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">Speaker</h3>
+						<div class="flex flex-col gap-2">
+							<p class="text-base font-medium text-gray-700">{selectedSession.speaker}</p>
+							{#if selectedSession.speakerBio}
+								<p class="text-sm leading-relaxed text-gray-600">{selectedSession.speakerBio}</p>
+							{/if}
+						</div>
 					</div>
-				</div>
+				{/if}
 
 				<!-- Social Links -->
-				{#if selectedSession.speakerLinks}
+				{#if selectedSession.type === 'panel'}
+					<div class="space-y-2">
+						<h3 class="text-lg font-semibold text-gray-900">Panelists</h3>
+						<div class="flex flex-col gap-2">
+							{#each selectedSession.panelListLinkedin as panelist (panelist.name)}
+								<a
+									href={panelist.linkedin}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+								>
+									<Linkedin size={16} />
+									{panelist.name}
+									<ExternalLink size={16} />
+								</a>
+							{/each}
+						</div>
+					</div>
+				{:else if selectedSession.speakerLinks}
 					<div class="space-y-2">
 						<h3 class="text-lg font-semibold text-gray-900">Connect</h3>
 						<div class="flex flex-wrap gap-3">
@@ -406,6 +426,24 @@
 								</a>
 							{/if}
 						</div>
+					</div>
+				{/if}
+
+				<!-- Moderator Info -->
+				{#if selectedSession.panelModerator}
+					<div class="flex flex-col gap-2">
+						<p class="text-base font-medium text-gray-700">Moderator</p>
+						{#if selectedSession.panelModerator.linkedin}
+							<a
+								href={selectedSession.panelModerator.linkedin}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+							>
+								<Linkedin size={16} />
+								{selectedSession.panelModerator.name}
+							</a>
+						{/if}
 					</div>
 				{/if}
 

@@ -15,6 +15,15 @@ export interface Session {
 		website?: string;
 		other?: string;
 	};
+	panelists?: string[]; // Panelists
+	panelModerator?: {
+		name: string;
+		linkedin: string;
+	}; // Panel Moderator
+	panelListLinkedin?: {
+		name: string;
+		linkedin: string;
+	}[]; // Panelists LinkedIn links
 	slidesLink?: string; // Link to presentation slides
 	resourcesLink?: string; // Additional resources
 	sessionNotes?: string; // Any additional notes from CSV
@@ -219,9 +228,36 @@ const track1Sessions: Session[] = [
 	},
 	{
 		id: 'track1-panel1',
-		title: 'Panel 1',
+		title: 'What could possibly go wrong? Everything',
 		speaker: 'TBD',
-		description: 'TBD',
+		panelists: [
+			'ArunRaj B',
+			'Bhaarath Vijay Ramesh',
+			'Aadithya Sathishkumar',
+			'Manivarna',
+			'Pragadeesh'
+		],
+		panelModerator: {
+			name: 'Rashmi Ashokan',
+			linkedin: 'https://www.linkedin.com/in/rashmi-asokan/'
+		},
+		panelListLinkedin: [
+			{
+				name: 'ArunRaj B',
+				linkedin: 'https://www.linkedin.com/in/arunrajb/'
+			},
+			{
+				name: 'Bhaarath Vijay Ramesh',
+				linkedin: 'https://www.linkedin.com/in/bhaarathvijayramesh/'
+			},
+			{
+				name: 'Aadithya Sathishkumar',
+				linkedin: 'https://www.linkedin.com/in/aadithya-sathishkumar-ask-22a342114/'
+			},
+			{ name: 'Manivarna', linkedin: 'https://www.linkedin.com/in/mdirisina/' },
+			{ name: 'Pragadeesh', linkedin: 'https://www.linkedin.com/in/pragadeesh-kannan/' }
+		],
+		description: `Building products has never been easier or riskier. From overconfident algorithms to features that “worked in staging,” today’s product world lives on the fine line between breakthrough and breakdown. This panel brings together product leaders, designers, and technologists to talk about the beautiful chaos of innovation — the decisions we get right, the experiments that fail spectacularly, and the lessons that only come from shipping fast and fixing faster. Join us as we unpack what happens when bold ideas meet real-world users, how to build resilience into the product process, and why a little bit of “wrong” often leads to the most interesting things. Because in the end, if nothing ever goes wrong… you’re probably not building anything new.`,
 		type: 'panel',
 		duration: 40,
 		startTime: '15:10',
@@ -250,11 +286,31 @@ const track1Sessions: Session[] = [
 	},
 	{
 		id: 'track1-panel2',
-		title: 'Panel 2',
+		title: 'Staring Into the Void Until It Makes Sense',
 		speaker: 'TBD',
-		description: 'TBD',
+		description: `AI sometimes feels like magic, until you’re the one debugging it at 2 a.m., wondering why your model thinks a banana is a bulldozer. This panel dives into the messy, fascinating, and often hilarious reality of building and scaling AI systems in the enterprise.
+Join our amazing panel as they unpack what really happens behind the buzzwords. From model hallucinations and prompt engineering hacks to enterprise adoption headaches, we’ll explore how today’s AI teams are turning chaos into clarity - one log file, one prompt, and one GPU crash at a time.
+Expect sharp insights, real stories, and a few “I can’t believe this worked” moments as we stare into the AI void… until it finally makes sense.
+`,
 		type: 'panel',
 		duration: 35,
+		panelists: ['Kayalvizhi Karthikeyan', 'Janet Rajan', 'Mary Helena Rose A', 'Prashant'],
+		panelModerator: {
+			name: 'Bhavani Codes',
+			linkedin: 'https://www.linkedin.com/in/bhavanicodes/'
+		},
+		panelListLinkedin: [
+			{
+				name: 'Kayalvizhi Karthikeyan',
+				linkedin: 'https://www.linkedin.com/in/kayalvizhi-karthikeyan/'
+			},
+			{ name: 'Janet Rajan', linkedin: 'https://www.linkedin.com/in/janetrajan/' },
+			{
+				name: 'Mary Helena Rose A',
+				linkedin: 'https://www.linkedin.com/in/maryhelenarose-a-587a90123/'
+			},
+			{ name: 'Prashant', linkedin: 'https://www.linkedin.com/in/prashantsrinivasan14/' }
+		],
 		startTime: '16:20',
 		endTime: '17:00'
 	}
