@@ -136,9 +136,17 @@
 								aria-current={selectedTrackId === track.id ? 'page' : undefined}
 							>
 								<span class="block">{track.name}</span>
-								<!-- <span class="ml-2 hidden text-xs text-gray-400 sm:inline"
-									>({track.description})</span
-								> -->
+								<!-- Halls -->
+								{#if track.id === 'track1'}
+									<!-- content here -->
+									<span>Main Hall D7</span>
+								{:else if track.id === 'track2'}
+									<!-- content here -->
+									<span>Amphi D7</span>
+								{:else if track.id === 'track3'}
+									<!-- content here -->
+									<span>Mini Hall D6</span>
+								{/if}
 							</button>
 						{/each}
 					</nav>
