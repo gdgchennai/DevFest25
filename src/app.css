@@ -119,3 +119,146 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer utilities {
+	/* Gold gradient text animation */
+	@keyframes gold-gradient {
+		0%, 100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	.gold-gradient-text {
+		background: linear-gradient(
+			90deg,
+			#d4af37 0%,
+			#f4d03f 25%,
+			#ffd700 50%,
+			#f4d03f 75%,
+			#d4af37 100%
+		);
+		background-size: 200% auto;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: gold-gradient 3s ease infinite;
+	}
+
+	/* Associate gradient text animation */
+	@keyframes associate-gradient {
+		0%, 100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	.associate-gradient-text {
+		background: linear-gradient(
+			90deg,
+			#4a90e2 0%,
+			#5ba3f5 25%,
+			#6bb6ff 50%,
+			#5ba3f5 75%,
+			#4a90e2 100%
+		);
+		background-size: 200% auto;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: associate-gradient 3s ease infinite;
+	}
+
+	/* Slide in and fade animation */
+	@keyframes slide-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-slide-in {
+		animation: slide-in-up 0.6s ease-out forwards;
+	}
+
+	/* Animated underline */
+	@keyframes underline-expand {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
+
+	.animated-underline {
+		position: relative;
+		display: inline-block;
+	}
+
+	.animated-underline::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		border-radius: 2px;
+		animation: underline-expand 0.8s ease-out 0.3s forwards;
+	}
+
+	.gold-underline::after {
+		background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+		background-size: 200% auto;
+		animation: underline-expand 0.8s ease-out 0.3s forwards,
+			gold-gradient 3s ease infinite 1.1s;
+	}
+
+	.associate-underline::after {
+		background: linear-gradient(90deg, #4a90e2, #6bb6ff, #4a90e2);
+		background-size: 200% auto;
+		animation: underline-expand 0.8s ease-out 0.3s forwards,
+			associate-gradient 3s ease infinite 1.1s;
+	}
+
+	/* Shimmer effect - works with gradient text */
+	@keyframes shimmer {
+		0% {
+			transform: translateX(-100%) skewX(-15deg);
+		}
+		100% {
+			transform: translateX(200%) skewX(-15deg);
+		}
+	}
+
+	.shimmer-effect {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.shimmer-effect::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.4),
+			transparent
+		);
+		animation: shimmer 2.5s infinite;
+		pointer-events: none;
+		z-index: 1;
+	}
+}

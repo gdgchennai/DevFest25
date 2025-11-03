@@ -7,6 +7,18 @@
 		alt?: string;
 	}
 
+	interface GoldSponsor {
+		name: string;
+		logo: string;
+		alt?: string;
+	}
+
+	interface AssociateSponsor {
+		name: string;
+		logo: string;
+		alt?: string;
+	}
+
 	interface SponsorsProps {
 		title?: string;
 		subtitle?: string;
@@ -14,7 +26,8 @@
 		onCtaClick?: () => void;
 		titleSponsorText?: string;
 		titleSponsorDescription?: string;
-		goldSponsorsCount?: number;
+		goldSponsors?: GoldSponsor[];
+		associateSponsors?: AssociateSponsor[];
 		communityPartners?: CommunityPartner[];
 	}
 
@@ -25,7 +38,20 @@
 		onCtaClick = () => {},
 		titleSponsorText = 'Your Logo Here',
 		titleSponsorDescription = 'Premium partnership opportunity available',
-		goldSponsorsCount = 3,
+		goldSponsors = [
+			{
+				name: 'Poshmark',
+				logo: '/sponsors/gold/poshmark.png',
+				alt: 'Poshmark Logo'
+			}
+		],
+		associateSponsors = [
+			{
+				name: 'Codewalla',
+				logo: '/sponsors/associate/codewalla.png',
+				alt: 'Codewalla Logo'
+			}
+		],
 		communityPartners = [
 			{
 				name: 'Woman Techmakers Chennai',
@@ -69,7 +95,7 @@
 	</div>
 
 	<!-- Sponsorship Benefits -->
-	<div class="mb-8">
+	<!-- <div class="mb-8">
 		<div class="rounded-xl border border-white bg-gray-50 p-6 lg:p-8">
 			<h5 class="mb-4 text-lg font-medium text-gray-900">Why Sponsor DevFest Chennai 2025?</h5>
 			<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -138,7 +164,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Title Sponsor -->
 	<!-- <div class="mb-8">
@@ -151,19 +177,54 @@
 	</div> -->
 
 	<!-- Gold Sponsors -->
-	<!-- <div class="mb-8">
-		<h5 class="mb-4 text-lg font-medium text-gray-900">Gold Sponsors</h5>
-		<div class="grid grid-cols-2 gap-6 md:grid-cols-3">
-			{#each Array.from({ length: goldSponsorsCount }, (_, i) => i) as i (i)}
-				<div class="rounded-xl border-2 border-dashed border-gray-300 p-4 text-center lg:p-6">
-					<div class="mx-auto mb-2 flex h-12 w-24 items-center justify-center rounded bg-gray-100">
-						<span class="text-xs text-gray-500">Logo</span>
+	{#if goldSponsors && goldSponsors.length > 0}
+		<div class="mb-8">
+			<h5
+				class="mb-4 text-lg font-medium animated-underline gold-underline gold-gradient-text animate-slide-in shimmer-effect"
+				style="font-weight: 600;"
+			>
+				Gold Sponsors
+			</h5>
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{#each goldSponsors as sponsor (sponsor.name)}
+					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center lg:p-6">
+						<div class="mx-auto mb-2 flex h-24 w-full items-center justify-center">
+							<img
+								src={sponsor.logo}
+								alt={sponsor.alt || sponsor.name}
+								class="h-full w-full object-contain"
+							/>
+						</div>
 					</div>
-					<p class="text-xs text-gray-600">Available</p>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
-	</div> -->
+	{/if}
+
+	<!-- Associate Sponsors -->
+	{#if associateSponsors && associateSponsors.length > 0}
+		<div class="mb-8">
+			<h5
+				class="mb-4 text-lg font-medium animated-underline associate-underline associate-gradient-text animate-slide-in shimmer-effect"
+				style="font-weight: 600;"
+			>
+				Associate Sponsors
+			</h5>
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{#each associateSponsors as sponsor (sponsor.name)}
+					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center lg:p-6">
+						<div class="mx-auto mb-2 flex h-24 w-full items-center justify-center">
+							<img
+								src={sponsor.logo}
+								alt={sponsor.alt || sponsor.name}
+								class="h-full w-full object-contain"
+							/>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/if}
 
 	<!-- Community Partners -->
 	<div class="mb-8">
