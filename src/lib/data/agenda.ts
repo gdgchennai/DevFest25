@@ -572,17 +572,17 @@ const track3Sessions: Session[] = [
 	},
 	{
 		id: 'track-new-lightning3',
-		title: 'There has never been a better time to build',
-		speaker: 'Abinash Muralidharan',
+		title: "There has never been a better time to build! So stop building for yesterday's Internet",
+		speaker: 'Abinash M Mudhaliyar',
 		description:
-			"This talk explores today's unprecedented opportunities for builders and makers. We'll discuss the explosion of AI tools, open-source technologies, and global communities that empower anyone to launch projects faster and bigger than ever before. ",
+			'Most developers stay busy building, but miss the bigger shifts happening around them. How to build a developer led startups in the AI age. Join us to explore opportunities while others are still looking at their backlog. ',
 		type: 'lightning',
 		duration: 20,
 		startTime: '15:00',
 		endTime: '15:25',
 		abstract:
 			"In an era defined by rapid technological innovation, there truly has never been a better time to build. This talk will inspire developers and creators to seize today's unique opportunities—highlighting how advancements in AI, democratized open-source tools, and the rise of worldwide developer communities are lowering barriers and accelerating innovation. Attendees will learn how they can leverage this ecosystem to start projects with greater speed and ambition than ever before, regardless of their background or resources. Join us to discover practical strategies, mindsets, and resources for turning your ideas into impactful, real-world solutions in the modern builder's landscape.",
-		speakerBio: 'Associate Software Developer at AVK Tech Solutions',
+		speakerBio: 'Co founder Dinodial.ai',
 		speakerLinks: {
 			linkedin: 'https://www.linkedin.com/in/abinash-m-m/'
 		}
