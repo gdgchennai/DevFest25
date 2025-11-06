@@ -50,6 +50,16 @@
 				name: 'Codewalla',
 				logo: '/sponsors/associate/codewalla.png',
 				alt: 'Codewalla Logo'
+			},
+			{
+				name: 'Rezoomex',
+				logo: '/sponsors/associate/rezoomex.png',
+				alt: 'Codewalla Logo'
+			},
+			{
+				name: 'Dinodial',
+				logo: '/sponsors/associate/dinodial.png',
+				alt: 'Codewalla Logo'
 			}
 		],
 		communityPartners = [
