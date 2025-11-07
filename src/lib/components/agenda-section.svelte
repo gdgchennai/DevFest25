@@ -26,13 +26,13 @@
 		location = 'Chennai, India',
 		items = [
 			{
-				time: '8:30 AM',
+				time: '8:00 AM',
 				title: 'Registration & Breakfast',
 				description: 'Check-in and morning refreshments',
 				type: 'welcome'
 			},
 			{
-				time: '9:30 AM',
+				time: '9:15 AM',
 				title: 'Opening Keynote',
 				description: 'Welcome to DevFest Chennai 2025',
 				type: 'keynote'
