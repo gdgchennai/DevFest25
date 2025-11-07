@@ -67,8 +67,8 @@ const commonSessions: Session[] = [
 	{
 		id: 'keynote',
 		title: 'Devfest Keynote',
-		speaker: 'Revealing soon...',
-		description: 'Interesting keynote to kick start the day',
+		speaker: 'Muthuramakrishnan V.',
+		description: 'Transformers and Beyond',
 		type: 'keynote',
 		duration: 30,
 		startTime: '09:45',
@@ -110,9 +110,9 @@ const commonSessions: Session[] = [
 		speaker: 'GDG Chennai Team',
 		description: 'Thank you for joining us at DevFest Chennai 2025!',
 		type: 'keynote',
-		duration: 15,
-		startTime: '17:00',
-		endTime: '17:15'
+		duration: 20,
+		startTime: '17:40',
+		endTime: '18:00'
 	}
 ];
 
@@ -207,10 +207,10 @@ const track1Sessions: Session[] = [
 	},
 	{
 		id: 'track1-session1',
-		title: 'Gemma-licious AI: Cooking Up Smart Apps with Flutter',
-		speaker: 'Kamal Shree',
+		title: 'The Future is now: build smarter with autonomous AI',
+		speaker: 'Somasundaram Magesh',
 		description:
-			"Learn how to integrate AI capabilities into Flutter applications using Google's Gemma models",
+			"Join with soms to build smarter with Autonomous AI",
 		type: 'session',
 		duration: 35,
 		startTime: '14:35',
@@ -308,8 +308,8 @@ const track1Sessions: Session[] = [
 			},
 			{ name: 'Prashant', linkedin: 'https://www.linkedin.com/in/prashantsrinivasan14/' }
 		],
-		startTime: '16:20',
-		endTime: '17:00'
+		startTime: '16:45',
+		endTime: '17:40'
 	}
 ];
 
@@ -469,8 +469,8 @@ const track2Sessions: Session[] = [
 		description: 'Complete agent development lifecycle using Google ADK',
 		type: 'session',
 		duration: 35,
-		startTime: '16:20',
-		endTime: '17:00',
+		startTime: '16:45',
+		endTime: '17:40',
 		abstract:
 			"Craft production-ready, self-evolving AI agents by mastering the end-to-end development lifecycle with Google's Agent Development Kit (ADK). This overview covers designing capabilities, integrating robust CI/CD pipelines for automated testing and deployment, and implementing data-driven feedback loops that allow the agent to learn and improve autonomously. Move beyond simple conversational design to build a scalable, intelligent system that continuously refines its performance and operates reliably in a live environment.",
 		speakerBio:
